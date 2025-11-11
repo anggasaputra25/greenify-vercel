@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greenify - Blog</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
+    <!-- Font Google Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Style Tailwind -->
+    <link href="./css/output.css" rel="stylesheet">
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navbar -->
+    <nav data-aos="fade-down" class="fixed bg-white h-20 flex items-center w-full justify-between px-5 md:px-20 z-10">
+        <a href="index.html" class="text-2xl font-semibold flex gap-2 items-center text-[#00855E]"><img
+                src="assets/favicon.png" alt="logo" class="w-12"> Greenify</a>
+        <div class="hidden md:flex gap-8">
+            <a href="about-us.html" class="hover:text-[#00855E] duration-100">About</a>
+            <a href="blog.html" class="text-[#00855E] duration-100">Blog</a>
+        </div>
+        <div class="w-40 hidden md:flex justify-end">
+            <a href="login.html" class="bg-[#00855E] px-6 py-2 text-white rounded-lg font-semibold transition-colors duration-100 hover:bg-[#006B4C]">Login</a>
+        </div>
+        <button id="btn-bars" class="text-gray-600 h-10 w-10 flex md:hidden justify-center items-center">
+            <i class="fa-solid fa-bars text-2xl"></i>
+        </button>
+    </nav>
+
+    <!-- Navbar Mobile -->
+    <nav id="navbar-mobile" class="fixed w-full -left-full bg-white h-screen z-20 py-4 px-5 flex flex-col gap-5 duration-200">
+        <div class="flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-semibold flex gap-2 items-center text-[#00855E]"><img
+                src="assets/favicon.png" alt="logo" class="w-12"> Greenify</a>
+            <button id="btn-navbar-close" class="text-gray-600 h-10 w-10 flex md:hidden justify-center items-center">
+                <i class="fa-solid fa-xmark text-2xl text-gray-600"></i>
+            </button>
+        </div>
+        <div class="h-0.5 bg-gray-300"></div>
+        <div class="flex flex-col gap-2">
+            <a href="about-us.html" class="hover:text-[#00855E] duration-100 font-medium text-gray-600">About</a>
+            <a href="blog.html" class="text-[#00855E] duration-100 font-medium">Blog</a>
+        </div>
+        <a href="login.html" class="bg-[#00855E] px-6 py-3 text-white rounded-lg font-semibold transition-colors duration-100 hover:bg-[#006B4C] text-center">Login</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-24 pb-20">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+            <!-- Header -->
+            <div data-aos="fade-down" class="text-center mb-16 pt-8 pb-12">
+                <div class="inline-block mb-4">
+                    <span
+                        class="inline-flex items-center gap-2 px-4 py-2 bg-green-50 text-[#00855E] rounded-full text-sm font-medium border border-green-100">
+                        <i class="fa-solid fa-leaf"></i>
+                        <span>Plant Care & Tips</span>
+                    </span>
+                </div>
+                <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                    Greenify Blog
+                    <span class="inline-block ml-2 animate-pulse">🌿</span>
+                </h1>
+                <p class="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+                    Discover tips, guides, and stories from our plant-loving community
+                </p>
+            </div>
+
+            <!-- Search & Filter -->
+            <div data-aos="fade-up" class="mb-12">
+                <div class="flex flex-col md:flex-row gap-4 items-center justify-between">
+                    <!-- Search Bar -->
+                    <div class="relative w-full md:w-96">
+                        <input type="text" placeholder="Search articles..."
+                            class="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#00855E] focus:ring-2 focus:ring-[#00855E]/20">
+                        <i class="fa-solid fa-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                    </div>
+
+                    <!-- Category Filter -->
+                    <div id="tabContainer" class="flex gap-2 overflow-x-auto w-full md:w-fit">
+                        <button class="px-4 py-2 bg-[#00855E] text-white rounded-lg font-medium whitespace-nowrap cursor-pointer">All
+                            Posts</button>
+                        <button
+                            class="px-4 py-2 bg-white text-gray-600 rounded-lg font-medium border border-gray-200 hover:bg-gray-100 transition-colors whitespace-nowrap cursor-pointer">Plant
+                            Care</button>
+                        <button
+                            class="px-4 py-2 bg-white text-gray-600 rounded-lg font-medium border border-gray-200 hover:bg-gray-100 transition-colors whitespace-nowrap cursor-pointer">Tips
+                            & Tricks</button>
+                        <button
+                            class="px-4 py-2 bg-white text-gray-600 rounded-lg font-medium border border-gray-200 hover:bg-gray-100 transition-colors whitespace-nowrap cursor-pointer">DIY
+                            Projects</button>
+                        <button
+                            class="px-4 py-2 bg-white text-gray-600 rounded-lg font-medium border border-gray-200 hover:bg-gray-100 transition-colors whitespace-nowrap cursor-pointer">Success
+                            Stories</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Article -->
+            <div data-aos="fade-up" class="mb-16">
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                        <!-- Image -->
+                        <div
+                            class="h-80 lg:h-auto bg-linear-to-br from-green-400 to-emerald-600 flex items-center justify-center">
+                            <i class="fa-solid fa-leaf text-white text-9xl opacity-30"></i>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="p-8 lg:p-10 flex flex-col justify-center">
+                            <span
+                                class="inline-block px-3 py-1 bg-green-100 text-green-700 text-xs font-semibold rounded-full mb-4 w-fit">Plant
+                                Care</span>
+                            <a href="blog-details.html"
+                                class="text-3xl font-bold text-gray-800 mb-4 hover:text-[#00855E] hover:underline">10
+                                Easy-Care Houseplants Perfect for Beginners</a>
+                            <p class="text-gray-600 mb-6">Starting your indoor garden journey? These low-maintenance
+                                plants are perfect for first-time plant parents. Learn which plants thrive with minimal
+                                care and how to keep them happy.</p>
+                            <div class="flex items-center gap-4 mb-6 text-sm text-gray-500">
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-user-circle text-[#00855E]"></i>
+                                    <span>Sarah Johnson</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-calendar text-[#00855E]"></i>
+                                    <span>Nov 5, 2025</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-clock text-[#00855E]"></i>
+                                    <span>5 min read</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <!-- Blog Card 1 -->
+                <article data-aos="fade-up" class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition-shadow group">
+                    <div
+                        class="h-48 bg-linear-to-br from-teal-400 to-teal-600 flex items-center justify-center relative overflow-hidden">
+                        <i
+                            class="fa-solid fa-droplet text-white text-6xl opacity-30 group-hover:scale-110 transition-transform"></i>
+                        <span
+                            class="absolute top-4 left-4 px-3 py-1 bg-white text-teal-700 text-xs font-semibold rounded-full">Plant
+                            Care</span>
+                    </div>
+                    <div class="p-6">
+                        <a href="blog-details.html"
+                            class="text-xl font-bold text-gray-800 mb-3 group-hover:text-[#00855E] transition-colors hover:underline">The
+                            Ultimate Guide to Watering Your Houseplants</a>
+                        <p class="text-gray-600 text-sm mb-4">Master the art of watering with our comprehensive guide.
+                            Learn when, how much, and the best techniques for different plant types.</p>
+                        <div class="flex items-center justify-between text-xs text-gray-500 mb-4">
+                            <span class="flex items-center gap-1"><i class="fa-solid fa-user"></i> Emily Chen</span>
+                            <span class="flex items-center gap-1"><i class="fa-solid fa-calendar"></i> Nov 3,
+                                2025</span>
+                            <span class="flex items-center gap-1"><i class="fa-solid fa-clock"></i> 7 min</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Card 2 -->
+                <article data-aos="fade-up" class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition-shadow group">
+                    <div
+                        class="h-48 bg-linear-to-br from-purple-400 to-purple-600 flex items-center justify-center relative overflow-hidden">
+                        <i
+                            class="fa-solid fa-bugs text-white text-6xl opacity-30 group-hover:scale-110 transition-transform"></i>
+                        <span
+                            class="absolute top-4 left-4 px-3 py-1 bg-white text-purple-700 text-xs font-semibold rounded-full">Tips
+                            & Tricks</span>
+                    </div>
+                    <div class="p-6">
+                        <a href="blog-details.html"
+                            class="text-xl font-bold text-gray-800 mb-3 group-hover:text-[#00855E] transition-colors hover:underline">Natural
+                            Pest Control: Keep Your Plants Bug-Free</a>
+                        <p class="text-gray-600 text-sm mb-4">Discover eco-friendly solutions to common plant pests. Say
+                            goodbye to harmful chemicals with these natural remedies.</p>
+                        <div class="flex items-center justify-between text-xs text-gray-500 mb-4">
+                            <span class="flex items-center gap-1"><i class="fa-solid fa-user"></i> Dr. Mike Davis</span>
+                            <span class="flex items-center gap-1"><i class="fa-solid fa-calendar"></i> Nov 1,
+                                2025</span>
+                            <span class="flex items-center gap-1"><i class="fa-solid fa-clock"></i> 6 min</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Card 3 -->
+                <article data-aos="fade-up" class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition-shadow group">
+                    <div
+                        class="h-48 bg-linear-to-br from-orange-400 to-orange-600 flex items-center justify-center relative overflow-hidden">
+                        <i
+                            class="fa-solid fa-sun text-white text-6xl opacity-30 group-hover:scale-110 transition-transform"></i>
+                        <span
+                            class="absolute top-4 left-4 px-3 py-1 bg-white text-orange-700 text-xs font-semibold rounded-full">Plant
+                            Care</span>
+                    </div>
+                    <div class="p-6">
+                        <a href="blog-details.html"
+                            class="text-xl font-bold text-gray-800 mb-3 group-hover:text-[#00855E] transition-colors hover:underline">Understanding
+                            Light Requirements for Indoor Plants</a>
+                        <p class="text-gray-600 text-sm mb-4">Not all plants need the same light. Learn to identify your
+                            home's light conditions and match them with the perfect plants.</p>
+                        <div class="flex items-center justify-between text-xs text-gray-500 mb-4">
+                            <span class="flex items-center gap-1"><i class="fa-solid fa-user"></i> Lisa Martinez</span>
+                            <span class="flex items-center gap-1"><i class="fa-solid fa-calendar"></i> Oct 30,
+                                2025</span>
+                            <span class="flex items-center gap-1"><i class="fa-solid fa-clock"></i> 8 min</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Card 4 -->
+                <article data-aos="fade-up" class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition-shadow group">
+                    <div
+                        class="h-48 bg-linear-to-br from-pink-400 to-pink-600 flex items-center justify-center relative overflow-hidden">
+                        <i
+                            class="fa-solid fa-scissors text-white text-6xl opacity-30 group-hover:scale-110 transition-transform"></i>
+                        <span
+                            class="absolute top-4 left-4 px-3 py-1 bg-white text-pink-700 text-xs font-semibold rounded-full">DIY
+                            Projects</span>
+                    </div>
+                    <div class="p-6">
+                        <a href="blog-details.html"
+                            class="text-xl font-bold text-gray-800 mb-3 group-hover:text-[#00855E] transition-colors hover:underline">DIY
+                            Self-Watering Planters on a Budget</a>
+                        <p class="text-gray-600 text-sm mb-4">Create your own self-watering system using common
+                            household items. Perfect for busy plant parents or frequent travelers.</p>
+                        <div class="flex items-center justify-between text-xs text-gray-500 mb-4">
+                            <span class="flex items-center gap-1"><i class="fa-solid fa-user"></i> Tom Wilson</span>
+                            <span class="flex items-center gap-1"><i class="fa-solid fa-calendar"></i> Oct 28,
+                                2025</span>
+                            <span class="flex items-center gap-1"><i class="fa-solid fa-clock"></i> 10 min</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Card 5 -->
+                <article data-aos="fade-up" class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition-shadow group">
+                    <div
+                        class="h-48 bg-linear-to-br from-cyan-400 to-cyan-600 flex items-center justify-center relative overflow-hidden">
+                        <i
+                            class="fa-solid fa-seedling text-white text-6xl opacity-30 group-hover:scale-110 transition-transform"></i>
+                        <span
+                            class="absolute top-4 left-4 px-3 py-1 bg-white text-cyan-700 text-xs font-semibold rounded-full">Tips
+                            & Tricks</span>
+                    </div>
+                    <div class="p-6">
+                        <a href="blog-details.html"
+                            class="text-xl font-bold text-gray-800 mb-3 group-hover:text-[#00855E] transition-colors hover:underline">Propagation
+                            101: Multiply Your Plant Collection</a>
+                        <p class="text-gray-600 text-sm mb-4">Turn one plant into many! Learn the basics of plant
+                            propagation through cuttings, division, and other simple methods.</p>
+                        <div class="flex items-center justify-between text-xs text-gray-500 mb-4">
+                            <span class="flex items-center gap-1"><i class="fa-solid fa-user"></i> Anna Lee</span>
+                            <span class="flex items-center gap-1"><i class="fa-solid fa-calendar"></i> Oct 25,
+                                2025</span>
+                            <span class="flex items-center gap-1"><i class="fa-solid fa-clock"></i> 9 min</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Card 6 -->
+                <article data-aos="fade-up" class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition-shadow group">
+                    <div
+                        class="h-48 bg-linear-to-br from-lime-400 to-lime-600 flex items-center justify-center relative overflow-hidden">
+                        <i
+                            class="fa-solid fa-heart text-white text-6xl opacity-30 group-hover:scale-110 transition-transform"></i>
+                        <span
+                            class="absolute top-4 left-4 px-3 py-1 bg-white text-lime-700 text-xs font-semibold rounded-full">Success
+                            Stories</span>
+                    </div>
+                    <div class="p-6">
+                        <a href="blog-details.html"
+                            class="text-xl font-bold text-gray-800 mb-3 group-hover:text-[#00855E] transition-colors hover:underline">From
+                            Zero to Plant Parent: My Journey</a>
+                        <p class="text-gray-600 text-sm mb-4">One user's inspiring transformation from killing every
+                            plant to maintaining a thriving indoor jungle of 50+ plants.</p>
+                        <div class="flex items-center justify-between text-xs text-gray-500 mb-4">
+                            <span class="flex items-center gap-1"><i class="fa-solid fa-user"></i> Jessica Brown</span>
+                            <span class="flex items-center gap-1"><i class="fa-solid fa-calendar"></i> Oct 22,
+                                2025</span>
+                            <span class="flex items-center gap-1"><i class="fa-solid fa-clock"></i> 5 min</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Pagination -->
+            <div data-aos="fade-up" class="flex justify-center items-center gap-2">
+                <button
+                    class="w-10 h-10 border border-gray-300 rounded-lg flex items-center justify-center hover:border-[#00855E] hover:text-[#00855E] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    disabled>
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button class="w-10 h-10 bg-[#00855E] text-white rounded-lg font-medium">1</button>
+                <button
+                    class="w-10 h-10 border border-gray-300 rounded-lg hover:border-[#00855E] hover:text-[#00855E] transition-colors">2</button>
+                <button
+                    class="w-10 h-10 border border-gray-300 rounded-lg hover:border-[#00855E] hover:text-[#00855E] transition-colors">3</button>
+                <button
+                    class="w-10 h-10 border border-gray-300 rounded-lg hover:border-[#00855E] hover:text-[#00855E] transition-colors">4</button>
+                <button
+                    class="w-10 h-10 border border-gray-300 rounded-lg flex items-center justify-center hover:border-[#00855E] hover:text-[#00855E] transition-colors">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white mt-20">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10 py-12">
+            <!-- Main Footer Content -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <!-- Brand Section -->
+                <div>
+                    <a href="index.html" class="flex items-center gap-2 mb-4">
+                        <img src="assets/favicon.png" alt="logo" class="w-10">
+                        <p class="font-semibold text-2xl">Greenify</p>
+                    </a>
+                    <p class="text-gray-400 text-sm mb-4">
+                        Making plant care accessible and enjoyable for everyone. Join our growing community of plant
+                        enthusiasts!
+                    </p>
+                    <div class="flex gap-3">
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#00855E] transition-colors">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#00855E] transition-colors">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#00855E] transition-colors">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#00855E] transition-colors">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="about-us.html" class="hover:text-[#00855E] transition-colors">About</a></li>
+                        <li><a href="blog.html" class="hover:text-[#00855E] transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Support</h3>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-[#00855E] transition-colors">Help Center</a></li>
+                        <li><a href="#" class="hover:text-[#00855E] transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-[#00855E] transition-colors">FAQs</a></li>
+                        <li><a href="#" class="hover:text-[#00855E] transition-colors">Community Forum</a></li>
+                        <li><a href="#" class="hover:text-[#00855E] transition-colors">Report a Bug</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Company</h3>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="about-us.html" class="hover:text-[#00855E] transition-colors">About Us</a></li>
+                        <li><a href="blog.html" class="hover:text-[#00855E] transition-colors">Blog</a></li>
+                        <li><a href="#" class="hover:text-[#00855E] transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-[#00855E] transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Newsletter Section -->
+            <div class="border-t border-gray-800 pt-8 mb-8">
+                <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                    <div class="flex-1">
+                        <h3 class="font-semibold text-lg mb-2">Subscribe to Our Newsletter</h3>
+                        <p class="text-gray-400 text-sm">Get weekly plant care tips and updates delivered to your inbox!
+                        </p>
+                    </div>
+                    <div class="flex gap-2 w-full md:w-auto flex-col md:flex-row">
+                        <input type="email" placeholder="Enter your email"
+                            class="flex-1 md:w-64 px-4 py-2.5 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#00855E] focus:ring-2 focus:ring-[#00855E]/20">
+                        <button
+                            class="bg-[#00855E] text-white px-6 py-2.5 rounded-lg font-medium hover:bg-[#006d4d] transition-colors whitespace-nowrap">
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Footer -->
+            <div
+                class="border-t border-gray-800 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-400">
+                <p>© 2025 Greenify. All rights reserved.</p>
+                <div class="flex items-center gap-6">
+                    <a href="#" class="hover:text-[#00855E] transition-colors">Privacy</a>
+                    <a href="#" class="hover:text-[#00855E] transition-colors">Terms</a>
+                    <a href="#" class="hover:text-[#00855E] transition-colors">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Show Navbar Mobile -->
+    <script src="js/show-navbar-mobile.js"></script>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/aos.js"></script>
+
+    <!-- Select Tab -->
+    <script src="js/select-tab.js"></script>
+</body>
+
+</html>

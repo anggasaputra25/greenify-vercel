@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greenify - Monstera Deliciosa</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
+    <!-- Font Google Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Style Tailwind -->
+    <link href="./css/output.css" rel="stylesheet">
+
+    <!-- Fancybox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/fancybox/fancybox.css"/>
+</head>
+
+<body class="bg-gray-50">
+    <div class="flex">
+        <!-- Navbar -->
+        <nav
+            class="z-20 w-full lg:w-1/4 p-10 fixed -left-full lg:static flex flex-col justify-between min-h-screen shadow-md bg-white transition-all duration-300 ease">
+            <div class="flex flex-col gap-5">
+                <div class="flex items-center gap-2">
+                    <img src="assets/favicon.png" alt="logo" class="w-13">
+                    <p class="font-semibold text-2xl text-[#00855E]">Greenify</p>
+                </div>
+                <div class="h-0.5 bg-gray-300"></div>
+                <div class="flex flex-col">
+                    <a href="dashboard.html"
+                        class="font-medium py-2.5 text-gray-600 transition-all duration-200 hover:pl-2"><i
+                            class="fa-solid fa-chart-diagram"></i> Overview</a>
+                    <a href="virtual-forest.html"
+                        class="font-medium py-2.5 text-gray-600 transition-all duration-200 hover:pl-2"><i
+                            class="fa-solid fa-leaf"></i> Virtual Forest</a>
+                    <a href="grow-calendar.html"
+                        class="font-medium py-2.5 text-gray-600 transition-all duration-200 hover:pl-2"><i
+                            class="fa-solid fa-calendar-days"></i> Grow Calendar</a>
+                    <a href="green-journey.html" class="font-medium py-2.5 text-[#00855E]"><i
+                            class="fa-solid fa-camera"></i> Green Journey</a>
+                    <a href="green-courses.html"
+                        class="font-medium py-2.5 text-gray-600 transition-all duration-200 hover:pl-2"><i
+                            class="fa-solid fa-brain"></i> Green Courses</a>
+                    <a href="ai-gardener.html"
+                        class="font-medium py-2.5 text-gray-600 transition-all duration-200 hover:pl-2"><i
+                            class="fa-solid fa-robot"></i> AI Gardener</a>
+                    <a href="profile.html"
+                        class="font-medium py-2.5 text-gray-600 transition-all duration-200 hover:pl-2"><i
+                            class="fa-solid fa-user"></i> Profile</a>
+                </div>
+            </div>
+            <div class="flex flex-col gap-5">
+                <div class="h-0.5 bg-gray-300"></div>
+                <a href="index.html"
+                    class="font-medium text-gray-600 hover:text-red-600 w-fit transition-colors duration-100"><i
+                        class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out</a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="w-full lg:w-3/4 p-10 overflow-y-scroll lg:h-screen">
+            <!-- Breadcrumb -->
+            <div class="mb-6">
+                <div class="flex items-center gap-2 text-sm text-gray-600">
+                    <a href="green-journey.html" class="hover:text-[#00855E]">Green Journey</a>
+                    <i class="fa-solid fa-chevron-right text-xs"></i>
+                    <span class="text-gray-800">Monstera Deliciosa</span>
+                </div>
+            </div>
+
+            <!-- Header -->
+            <div class="md:flex mb-8 justify-between">
+                <div>
+                    <h1 class="text-3xl font-semibold text-gray-800 mb-2">Monstera Deliciosa</h1>
+                    <p class="text-gray-600">My First Plant!</p>
+                </div>
+                <button onclick="showModal()"
+                    class="mt-5 md:mt-0 shrink-0 h-fit cursor-pointer bg-[#00855E] text-white py-3 px-6 rounded-lg font-medium hover:bg-[#006d4d] transition-colors">
+                    Manage Plant
+                </button>
+            </div>
+
+            <!-- Modal -->
+            <div id="modal"
+                class="bg-black/50 h-screen fixed top-0 left-0 w-full z-99 hidden justify-center items-center">
+                <div id="modal-form"
+                    class="p-8 bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden max-h-screen overflow-y-auto lg:w-[54%]">
+                    <form class="space-y-6">
+                        <!-- Tab Type -->
+                        <label class="block text-sm font-medium text-gray-700 mb-2" for="type">Type</label>
+                        <div class="flex gap-3 overflow-x-auto" id="tabContainer">
+                            <button type="button"
+                                class="cursor-pointer px-4 py-2 bg-[#00855E] text-white rounded-lg font-medium hover:bg-[#006d4d] transition-colors">
+                                Monstera Deliciosa
+                            </button>
+                            <button type="button"
+                                class="cursor-pointer px-4 py-2 bg-white text-gray-600 rounded-lg font-medium hover:bg-gray-100 transition-colors border border-gray-200">
+                                Dracaena Trifasciata
+                            </button>
+                            <button type="button"
+                                class="cursor-pointer px-4 py-2 bg-white text-gray-600 rounded-lg font-medium hover:bg-gray-100 transition-colors border border-gray-200">
+                                Peace Lily
+                            </button>
+                            <button type="button"
+                                class="cursor-pointer px-4 py-2 bg-white text-gray-600 rounded-lg font-medium hover:bg-gray-100 transition-colors border border-gray-200">
+                                Orchids
+                            </button>
+                            <button type="button"
+                                class="cursor-pointer px-4 py-2 bg-white text-gray-600 rounded-lg font-medium hover:bg-gray-100 transition-colors border border-gray-200">
+                                Pothos
+                            </button>
+                        </div>
+                        <!-- Name -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2" for="name">Name</label>
+                            <input id="name" type="text" placeholder="Enter your plant's Name"
+                                value="Monstera Deliciosa"
+                                class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:border-[#00855E] focus:ring-2 focus:ring-[#00855E]/20">
+                        </div>
+                        <!-- Note -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2" for="short_note">Short
+                                Note</label>
+                            <input id="short_note" type="text" placeholder="Enter note" value="My First Plant!"
+                                class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:border-[#00855E] focus:ring-2 focus:ring-[#00855E]/20">
+                        </div>
+                        <!-- Photo -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2" for="upload_photo">Plant
+                                Pictures</label>
+                            <input type="file" id="upload_photo" hidden>
+                            <div class="flex gap-2 flex-wrap lg:justify-between">
+                                <div class="relative w-fit">
+                                    <img src="assets/monstera_deliciosa.jpg" alt="monstera"
+                                        class="w-60 h-60 rounded-lg object-cover">
+                                    <div
+                                        class="bg-red-500 absolute bottom-0 right-0 p-2 rounded-tl-lg hover:bg-red-600 cursor-pointer">
+                                        <i class="fa-solid fa-trash text-white"></i>
+                                    </div>
+                                </div>
+                                <div class="relative w-fit">
+                                    <img src="assets/plant_detail_1.jpg" alt="monstera"
+                                        class="w-60 h-60 rounded-lg object-cover">
+                                    <div
+                                        class="bg-red-500 absolute bottom-0 right-0 p-2 rounded-tl-lg hover:bg-red-600 cursor-pointer">
+                                        <i class="fa-solid fa-trash text-white"></i>
+                                    </div>
+                                </div>
+                                <div class="relative w-fit">
+                                    <img src="assets/plant_detail_2.jpg" alt="monstera"
+                                        class="w-60 h-60 rounded-lg object-cover">
+                                    <div
+                                        class="bg-red-500 absolute bottom-0 right-0 p-2 rounded-tl-lg hover:bg-red-600 cursor-pointer">
+                                        <i class="fa-solid fa-trash text-white"></i>
+                                    </div>
+                                </div>
+                                <div class="relative w-fit">
+                                    <img src="assets/plant_detail_3.jpg" alt="monstera"
+                                        class="w-60 h-60 rounded-lg object-cover">
+                                    <div
+                                        class="bg-red-500 absolute bottom-0 right-0 p-2 rounded-tl-lg hover:bg-red-600 cursor-pointer">
+                                        <i class="fa-solid fa-trash text-white"></i>
+                                    </div>
+                                </div>
+                                <div class="relative w-fit">
+                                    <img src="assets/plant_detail_4.jpg" alt="monstera"
+                                        class="w-60 h-60 rounded-lg object-cover">
+                                    <div
+                                        class="bg-red-500 absolute bottom-0 right-0 p-2 rounded-tl-lg hover:bg-red-600 cursor-pointer">
+                                        <i class="fa-solid fa-trash text-white"></i>
+                                    </div>
+                                </div>
+                                <div class="relative w-fit">
+                                    <img src="assets/plant_detail_5.jpg" alt="monstera"
+                                        class="w-60 h-60 rounded-lg object-cover">
+                                    <div
+                                        class="bg-red-500 absolute bottom-0 right-0 p-2 rounded-tl-lg hover:bg-red-600 cursor-pointer">
+                                        <i class="fa-solid fa-trash text-white"></i>
+                                    </div>
+                                </div>
+                                <label for="upload_photo"
+                                    class="w-60 h-60 border border-gray-300 rounded-lg flex justify-center items-center cursor-pointer">
+                                    <i class="fa-solid fa-plus text-gray-300 text-6xl"></i>
+                                </label>
+                            </div>
+                        </div>
+                        <!-- Buttons -->
+                        <div class="flex items-center gap-4 pt-4">
+                            <button type="submit"
+                                class="cursor-pointer bg-[#00855E] text-white px-6 py-2.5 rounded-lg font-medium hover:bg-[#006d4d] transition-colors">
+                                Save Changes
+                            </button>
+                            <button type="button" onclick="closeModal()"
+                                class="cursor-pointer bg-white text-gray-700 px-6 py-2.5 rounded-lg font-medium border border-gray-300 hover:bg-gray-50 transition-colors">
+                                Cancel
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Photo Gallery -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                <!-- Photo Card 1 -->
+                <div
+                    class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow">
+                    <div class="aspect-square relative">
+                        <a href="assets/monstera_deliciosa.jpg" data-fancybox="gallery">
+                            <img src="assets/monstera_deliciosa.jpg" alt="plant" class="w-full h-full object-cover">
+                        </a>
+                        <div class="absolute top-3 right-3">
+                            <button
+                                class="w-10 h-10 bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-colors">
+                                <i class="fa-solid fa-heart text-red-500"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo Card 2 -->
+                <div
+                    class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow">
+                    <div class="aspect-square relative">
+                        <a href="assets/plant_detail_1.jpg" data-fancybox="gallery">
+                            <img src="assets/plant_detail_1.jpg" alt="plant" class="w-full h-full object-cover">
+                        </a>
+                        <div class="absolute top-3 right-3">
+                            <button
+                                class="w-10 h-10 bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-colors">
+                                <i class="fa-regular fa-heart text-red-400"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo Card 3 -->
+                <div
+                    class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow">
+                    <div class="aspect-square relative">
+                        <a href="assets/plant_detail_2.jpg" data-fancybox="gallery">
+                            <img src="assets/plant_detail_2.jpg" alt="plant" class="w-full h-full object-cover">
+                        </a>
+                        <div class="absolute top-3 right-3">
+                            <button
+                                class="w-10 h-10 bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-colors">
+                                <i class="fa-regular fa-heart text-red-400"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo Card 4 -->
+                <div
+                    class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow">
+                    <div class="aspect-square relative">
+                        <a href="assets/plant_detail_3.jpg" data-fancybox="gallery">
+                            <img src="assets/plant_detail_3.jpg" alt="plant" class="w-full h-full object-cover">
+                        </a>
+                        <div class="absolute top-3 right-3">
+                            <button
+                                class="w-10 h-10 bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-colors">
+                                <i class="fa-regular fa-heart text-red-400"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo Card 5 -->
+                <div
+                    class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow">
+                    <div class="aspect-square relative">
+                        <a href="assets/plant_detail_4.jpg" data-fancybox="gallery">
+                            <img src="assets/plant_detail_4.jpg" alt="plant" class="w-full h-full object-cover">
+                        </a>
+                        <div class="absolute top-3 right-3">
+                            <button
+                                class="w-10 h-10 bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-colors">
+                                <i class="fa-regular fa-heart text-red-400"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo Card 6 -->
+                <div
+                    class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow">
+                    <div class="aspect-square relative">
+                        <a href="assets/plant_detail_5.jpg" data-fancybox="gallery">
+                            <img src="assets/plant_detail_5.jpg" alt="plant" class="w-full h-full object-cover">
+                        </a>
+                        <div class="absolute top-3 right-3">
+                            <button
+                                class="w-10 h-10 bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-colors">
+                                <i class="fa-regular fa-heart text-red-400"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Growth Timeline Section -->
+            <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                <div class="mb-6">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-1">Featured: Monstera Growth Timeline</h2>
+                    <p class="text-gray-600">Watch your plant's incredible transformation over time</p>
+                </div>
+
+                <!-- Timeline -->
+                <div class="relative">
+                    <!-- Timeline Line -->
+                    <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-gray-200 hidden lg:block"></div>
+
+                    <!-- Timeline Items -->
+                    <div class="space-y-8">
+                        <!-- Timeline Item 1 -->
+                        <div class="flex gap-6">
+                            <div class="relative shrink-0 hidden lg:block">
+                                <div
+                                    class="w-16 h-16 bg-[#00855E] rounded-full flex items-center justify-center text-white font-semibold z-10 relative">
+                                    W12
+                                </div>
+                            </div>
+                            <div class="flex-1 pb-8">
+                                <div class="bg-gray-50 rounded-lg p-4">
+                                    <div class="flex items-start justify-between mb-3">
+                                        <div>
+                                            <h3 class="font-semibold text-gray-800">Week 12 - Major Growth!</h3>
+                                            <p class="text-sm text-gray-600">November 6, 2025</p>
+                                        </div>
+                                        <div
+                                            class="w-20 h-20 bg-linear-to-br from-green-400 to-green-600 rounded-lg hidden lg:flex items-center justify-center">
+                                            <i class="fa-solid fa-seedling text-white text-2xl"></i>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-700">New leaf is unfurling beautifully! The fenestrations are
+                                        more pronounced than ever. Height: 45cm</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 2 -->
+                        <div class="flex gap-6">
+                            <div class="relative shrink-0 hidden lg:block">
+                                <div
+                                    class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center text-white font-semibold z-10 relative">
+                                    W8
+                                </div>
+                            </div>
+                            <div class="flex-1 pb-8">
+                                <div class="bg-gray-50 rounded-lg p-4">
+                                    <div class="flex items-start justify-between mb-3">
+                                        <div>
+                                            <h3 class="font-semibold text-gray-800">Week 8 - Steady Progress</h3>
+                                            <p class="text-sm text-gray-600">October 9, 2025</p>
+                                        </div>
+                                        <div
+                                            class="w-20 h-20 bg-linear-to-br from-green-500 to-green-700 rounded-lg hidden lg:flex items-center justify-center">
+                                            <i class="fa-solid fa-leaf text-white text-2xl"></i>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-700">Fourth leaf emerged with beautiful splits. Plant is
+                                        adapting well to the environment. Height: 35cm</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 3 -->
+                        <div class="flex gap-6">
+                            <div class="relative shrink-0 hidden lg:block">
+                                <div
+                                    class="w-16 h-16 bg-green-700 rounded-full flex items-center justify-center text-white font-semibold z-10 relative">
+                                    W4
+                                </div>
+                            </div>
+                            <div class="flex-1 pb-8">
+                                <div class="bg-gray-50 rounded-lg p-4">
+                                    <div class="flex items-start justify-between mb-3">
+                                        <div>
+                                            <h3 class="font-semibold text-gray-800">Week 4 - First Splits!</h3>
+                                            <p class="text-sm text-gray-600">September 11, 2025</p>
+                                        </div>
+                                        <div
+                                            class="w-20 h-20 bg-linear-to-br from-emerald-400 to-emerald-600 rounded-lg hidden lg:flex items-center justify-center">
+                                            <i class="fa-solid fa-spa text-white text-2xl"></i>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-700">Third leaf showing fenestrations! Very exciting milestone
+                                        for this young plant. Height: 25cm</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 4 -->
+                        <div class="flex gap-6">
+                            <div class="relative shrink-0 hidden lg:block">
+                                <div
+                                    class="w-16 h-16 bg-green-800 rounded-full flex items-center justify-center text-white font-semibold z-10 relative">
+                                    W1
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <div class="bg-gray-50 rounded-lg p-4">
+                                    <div class="flex items-start justify-between mb-3">
+                                        <div>
+                                            <h3 class="font-semibold text-gray-800">Week 1 - Welcome Home!</h3>
+                                            <p class="text-sm text-gray-600">August 14, 2025</p>
+                                        </div>
+                                        <div
+                                            class="w-20 h-20 bg-linear-to-br from-teal-400 to-teal-600 rounded-lg hidden lg:flex items-center justify-center">
+                                            <i class="fa-solid fa-seedling text-white text-2xl"></i>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-700">Just brought this beautiful baby home! Starting with 2
+                                        healthy leaves. Can't wait to watch it grow! Height: 15cm</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- Hamburger Button (Mobile Only) -->
+        <button id="menuBtn"
+            class="fixed bottom-6 right-6 bg-[#00855E] text-white p-4 rounded-full shadow-lg lg:hidden z-50 hover:bg-green-700 transition-colors">
+            <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+    </div>
+
+    <!-- Show Navbar Mobile -->
+    <script src="js/user-navbar.js"></script>
+
+    <!-- Modal -->
+    <script src="js/function-modal.js"></script>
+
+    <!-- Select Tab -->
+    <script src="js/select-tab.js"></script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <!-- Fancybox -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/fancybox/fancybox.umd.js"></script>
+    <script src="js/fancybox.js"></script>
+</body>
+
+</html>

@@ -1,2 +1,2 @@
-# greenify-vercel
+# greenify
 Website for the InvoFest competition

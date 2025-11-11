@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greenify - Grow Calendar</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
+    <!-- Font Google Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Style Tailwind -->
+    <link href="./css/output.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-50">
+    <div class="flex">
+        <!-- Navbar -->
+        <nav
+            class="w-full lg:w-1/4 p-10 fixed -left-full lg:static flex flex-col justify-between min-h-screen shadow-md bg-white transition-all duration-300 ease">
+            <div class="flex flex-col gap-5">
+                <div class="flex items-center gap-2">
+                    <img src="assets/favicon.png" alt="logo" class="w-13">
+                    <p class="font-semibold text-2xl text-[#00855E]">Greenify</p>
+                </div>
+                <div class="h-0.5 bg-gray-300"></div>
+                <div class="flex flex-col">
+                    <a href="dashboard.html"
+                        class="font-medium py-2.5 text-gray-600 transition-all duration-200 hover:pl-2"><i
+                            class="fa-solid fa-chart-diagram"></i> Overview</a>
+                    <a href="virtual-forest.html"
+                        class="font-medium py-2.5 text-gray-600 transition-all duration-200 hover:pl-2"><i
+                            class="fa-solid fa-leaf"></i> Virtual Forest</a>
+                    <a href="grow-calendar.html" class="font-medium py-2.5 text-[#00855E]"><i
+                            class="fa-solid fa-calendar-days"></i> Grow Calendar</a>
+                    <a href="green-journey.html"
+                        class="font-medium py-2.5 text-gray-600 transition-all duration-200 hover:pl-2"><i
+                            class="fa-solid fa-camera"></i> Green Journey</a>
+                    <a href="green-courses.html"
+                        class="font-medium py-2.5 text-gray-600 transition-all duration-200 hover:pl-2"><i
+                            class="fa-solid fa-brain"></i> Green Courses</a>
+                    <a href="ai-gardener.html"
+                        class="font-medium py-2.5 text-gray-600 transition-all duration-200 hover:pl-2"><i
+                            class="fa-solid fa-robot"></i> AI Gardener</a>
+                    <a href="profile.html"
+                        class="font-medium py-2.5 text-gray-600 transition-all duration-200 hover:pl-2"><i
+                            class="fa-solid fa-user"></i> Profile</a>
+                </div>
+            </div>
+            <div class="flex flex-col gap-5">
+                <div class="h-0.5 bg-gray-300"></div>
+                <a href="index.html"
+                    class="font-medium text-gray-600 hover:text-red-600 w-fit transition-colors duration-100"><i
+                        class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out</a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="w-full lg:w-3/4 p-10 overflow-y-scroll lg:h-screen">
+            <!-- Header -->
+            <div class="mb-8">
+                <h1 class="text-3xl font-semibold text-gray-800 mb-2">Grow Calendar</h1>
+                <p class="text-gray-600">Smart scheduling for your plant care routine</p>
+            </div>
+
+            <!-- Current Date & Add Task -->
+            <div
+                class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 mb-8 border border-gray-100 bg-white rounded-xl shadow-sm px-6 py-4">
+                <div>
+                    <p class="text-sm text-gray-600 mb-1">Today</p>
+                    <p class="text-2xl font-semibold text-gray-800">Thursday, November 6, 2025</p>
+                </div>
+                <button onclick="showModal()"
+                    class="cursor-pointer bg-[#00855E] text-white py-3 px-6 rounded-lg font-medium hover:bg-[#006d4d] transition-colors flex items-center gap-2">
+                    <i class="fa-solid fa-plus"></i>
+                    Add New Task
+                </button>
+            </div>
+
+            <!-- Modal -->
+            <div id="modal"
+                class="bg-black/50 h-screen fixed top-0 left-0 w-full z-99 hidden justify-center items-center">
+                <div id="modal-form"
+                    class="p-8 bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden max-h-screen overflow-y-auto">
+                    <form class="space-y-6">
+                        <!-- Tab Tasks -->
+                        <div class="flex gap-3" id="tabContainer">
+                            <button type="button"
+                                class="cursor-pointer px-4 py-2 bg-[#00855E] text-white rounded-lg font-medium transition-colors">
+                                Watering
+                            </button>
+                            <button type="button"
+                                class="cursor-pointer px-4 py-2 bg-white text-gray-600 rounded-lg font-medium hover:bg-gray-100 transition-colors border border-gray-200">
+                                Fertilizing
+                            </button>
+                            <button type="button"
+                                class="cursor-pointer px-4 py-2 bg-white text-gray-600 rounded-lg font-medium hover:bg-gray-100 transition-colors border border-gray-200">
+                                Pruning
+                            </button>
+                        </div>
+                        <!-- Plant -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2" for="plant">Plant</label>
+                            <input id="plant" type="text" placeholder="Search Plant"
+                                class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:border-[#00855E] focus:ring-2 focus:ring-[#00855E]/20">
+
+                            <div class="mt-2">
+                                <div class="cursor-pointer flex gap-2 items-center p-3 hover:bg-gray-100 rounded-lg">
+                                    <img src="assets/monstera_deliciosa.jpg"
+                                        class="h-12 w-12 bg-amber-800 rounded-full object-cover shrink-0">
+                                    <div class="flex flex-col shrink-0">
+                                        <p>My First Plant</p>
+                                        <p class="text-sm text-gray-600">Monstera Deliciosa</p>
+                                    </div>
+                                </div>
+                                <div class="cursor-pointer flex gap-2 items-center p-3 hover:bg-gray-100 rounded-lg">
+                                    <img src="assets/dracaena_trifasciata.jpg"
+                                        class="h-12 w-12 bg-amber-800 rounded-full object-cover shrink-0">
+                                    <div class="flex flex-col shrink-0">
+                                        <p>Snake Plant</p>
+                                        <p class="text-sm text-gray-600">Dracaena Trifasciata</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Date -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2" for="date">Date</label>
+                            <input id="date" type="date"
+                                class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:border-[#00855E] focus:ring-2 focus:ring-[#00855E]/20">
+                        </div>
+                        <!-- Time -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2" for="time">Time</label>
+                            <input id="time" type="time"
+                                class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:border-[#00855E] focus:ring-2 focus:ring-[#00855E]/20">
+                        </div>
+                        <!-- Note -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2" for="short_note">Short
+                                Note</label>
+                            <input id="short_note" type="text"
+                                class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:border-[#00855E] focus:ring-2 focus:ring-[#00855E]/20">
+                        </div>
+                        <!-- Buttons -->
+                        <div class="flex items-center gap-4 pt-4">
+                            <button type="submit"
+                                class="cursor-pointer bg-[#00855E] text-white px-6 py-2.5 rounded-lg font-medium hover:bg-[#006d4d] transition-colors">
+                                Add Task
+                            </button>
+                            <button type="button" onclick="closeModal()"
+                                class="cursor-pointer bg-white text-gray-700 px-6 py-2.5 rounded-lg font-medium border border-gray-300 hover:bg-gray-50 transition-colors">
+                                Cancel
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Calendar View & Tasks -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Calendar -->
+                <div class="lg:col-span-2 bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-xl font-semibold text-gray-800">November 2025</h2>
+                        <div class="flex gap-2">
+                            <button
+                                class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors">
+                                <i class="fa-solid fa-chevron-left text-gray-600"></i>
+                            </button>
+                            <button
+                                class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors">
+                                <i class="fa-solid fa-chevron-right text-gray-600"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Calendar Grid -->
+                    <div class="grid grid-cols-7 gap-2">
+                        <!-- Day Headers -->
+                        <div class="text-center py-2 text-sm font-semibold text-gray-600">Sun</div>
+                        <div class="text-center py-2 text-sm font-semibold text-gray-600">Mon</div>
+                        <div class="text-center py-2 text-sm font-semibold text-gray-600">Tue</div>
+                        <div class="text-center py-2 text-sm font-semibold text-gray-600">Wed</div>
+                        <div class="text-center py-2 text-sm font-semibold text-gray-600">Thu</div>
+                        <div class="text-center py-2 text-sm font-semibold text-gray-600">Fri</div>
+                        <div class="text-center py-2 text-sm font-semibold text-gray-600">Sat</div>
+
+                        <!-- Empty cells for offset -->
+                        <div class="aspect-square"></div>
+                        <div class="aspect-square"></div>
+                        <div class="aspect-square"></div>
+                        <div class="aspect-square"></div>
+                        <div class="aspect-square"></div>
+
+                        <!-- Day 1 -->
+                        <div
+                            class="aspect-square border border-gray-200 rounded-lg p-2 hover:border-[#00855E] transition-colors cursor-pointer">
+                            <p class="text-sm text-gray-700">1</p>
+                            <div class="flex gap-1 mt-1">
+                                <div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                                <div class="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                            </div>
+                        </div>
+
+                        <!-- Day 2 -->
+                        <div
+                            class="aspect-square border border-gray-200 rounded-lg p-2 hover:border-[#00855E] transition-colors cursor-pointer">
+                            <p class="text-sm text-gray-700">2</p>
+                        </div>
+
+                        <!-- Day 3 -->
+                        <div
+                            class="aspect-square border border-gray-200 rounded-lg p-2 hover:border-[#00855E] transition-colors cursor-pointer">
+                            <p class="text-sm text-gray-700">3</p>
+                            <div class="flex gap-1 mt-1">
+                                <div class="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                            </div>
+                        </div>
+
+                        <!-- Day 4 -->
+                        <div
+                            class="aspect-square border border-gray-200 rounded-lg p-2 hover:border-[#00855E] transition-colors cursor-pointer">
+                            <p class="text-sm text-gray-700">4</p>
+                            <div class="flex gap-1 mt-1">
+                                <div class="w-1.5 h-1.5 bg-purple-500 rounded-full"></div>
+                            </div>
+                        </div>
+
+                        <!-- Day 5 -->
+                        <div
+                            class="aspect-square border border-gray-200 rounded-lg p-2 hover:border-[#00855E] transition-colors cursor-pointer">
+                            <p class="text-sm text-gray-700">5</p>
+                        </div>
+
+                        <!-- Day 6 - Today -->
+                        <div class="aspect-square border-2 border-[#00855E] bg-green-50 rounded-lg p-2 cursor-pointer">
+                            <p class="text-sm font-semibold text-[#00855E]">6</p>
+                            <div class="flex gap-1 mt-1">
+                                <div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                                <div class="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                                <div class="w-1.5 h-1.5 bg-purple-500 rounded-full"></div>
+                            </div>
+                        </div>
+
+                        <!-- Day 7 -->
+                        <div
+                            class="aspect-square border border-gray-200 rounded-lg p-2 hover:border-[#00855E] transition-colors cursor-pointer">
+                            <p class="text-sm text-gray-700">7</p>
+                        </div>
+
+                        <!-- Day 8 -->
+                        <div
+                            class="aspect-square border border-gray-200 rounded-lg p-2 hover:border-[#00855E] transition-colors cursor-pointer">
+                            <p class="text-sm text-gray-700">8</p>
+                            <div class="flex gap-1 mt-1">
+                                <div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                            </div>
+                        </div>
+
+                        <!-- Day 9 -->
+                        <div
+                            class="aspect-square border border-gray-200 rounded-lg p-2 hover:border-[#00855E] transition-colors cursor-pointer">
+                            <p class="text-sm text-gray-700">9</p>
+                        </div>
+
+                        <!-- Day 10 -->
+                        <div
+                            class="aspect-square border border-gray-200 rounded-lg p-2 hover:border-[#00855E] transition-colors cursor-pointer">
+                            <p class="text-sm text-gray-700">10</p>
+                            <div class="flex gap-1 mt-1">
+                                <div class="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                                <div class="w-1.5 h-1.5 bg-purple-500 rounded-full"></div>
+                            </div>
+                        </div>
+
+                        <!-- Days 11-30 -->
+                        <div
+                            class="aspect-square border border-gray-200 rounded-lg p-2 hover:border-[#00855E] transition-colors cursor-pointer">
+                            <p class="text-sm text-gray-700">11</p>
+                        </div>
+                        <div
+                            class="aspect-square border border-gray-200 rounded-lg p-2 hover:border-[#00855E] transition-colors cursor-pointer">
+                            <p class="text-sm text-gray-700">12</p>
+                        </div>
+                        <div
+                            class="aspect-square border border-gray-200 rounded-lg p-2 hover:border-[#00855E] transition-colors cursor-pointer">
+                            <p class="text-sm text-gray-700">13</p>
+                        </div>
+                        <div
+                            class="aspect-square border border-gray-200 rounded-lg p-2 hover:border-[#00855E] transition-colors cursor-pointer">
+                            <p class="text-sm text-gray-700">14</p>
+                        </div>
+                        <div
+                            class="aspect-square border border-gray-200 rounded-lg p-2 hover:border-[#00855E] transition-colors cursor-pointer">
+                            <p class="text-sm text-gray-700">15</p>
+                            <div class="flex gap-1 mt-1">
+                                <div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                            </div>
+                        </div>
+                        <div
+                            class="aspect-square border border-gray-200 rounded-lg p-2 hover:border-[#00855E] transition-colors cursor-pointer">
+                            <p class="text-sm text-gray-700">16</p>
+                        </div>
+                        <div
+                            class="aspect-square border border-gray-200 rounded-lg p-2 hover:border-[#00855E] transition-colors cursor-pointer">
+                            <p class="text-sm text-gray-700">17</p>
+                        </div>
+                        <div
+                            class="aspect-square border border-gray-200 rounded-lg p-2 hover:border-[#00855E] transition-colors cursor-pointer">
+                            <p class="text-sm text-gray-700">18</p>
+                        </div>
+                        <div
+                            class="aspect-square border border-gray-200 rounded-lg p-2 hover:border-[#00855E] transition-colors cursor-pointer">
+                            <p class="text-sm text-gray-700">19</p>
+                        </div>
+                        <div
+                            class="aspect-square border border-gray-200 rounded-lg p-2 hover:border-[#00855E] transition-colors cursor-pointer">
+                            <p class="text-sm text-gray-700">20</p>
+                            <div class="flex gap-1 mt-1">
+                                <div class="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+                            </div>
+                        </div>
+                        <div
+                            class="aspect-square border border-gray-200 rounded-lg p-2 hover:border-[#00855E] transition-colors cursor-pointer">
+                            <p class="text-sm text-gray-700">21</p>
+                        </div>
+                        <div
+                            class="aspect-square border border-gray-200 rounded-lg p-2 hover:border-[#00855E] transition-colors cursor-pointer">
+                            <p class="text-sm text-gray-700">22</p>
+                        </div>
+                        <div
+                            class="aspect-square border border-gray-200 rounded-lg p-2 hover:border-[#00855E] transition-colors cursor-pointer">
+                            <p class="text-sm text-gray-700">23</p>
+                        </div>
+                        <div
+                            class="aspect-square border border-gray-200 rounded-lg p-2 hover:border-[#00855E] transition-colors cursor-pointer">
+                            <p class="text-sm text-gray-700">24</p>
+                        </div>
+                        <div
+                            class="aspect-square border border-gray-200 rounded-lg p-2 hover:border-[#00855E] transition-colors cursor-pointer">
+                            <p class="text-sm text-gray-700">25</p>
+                            <div class="flex gap-1 mt-1">
+                                <div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                                <div class="w-1.5 h-1.5 bg-purple-500 rounded-full"></div>
+                                <div class="w-1.5 h-1.5 bg-yellow-500 rounded-full"></div>
+                            </div>
+                        </div>
+                        <div
+                            class="aspect-square border border-gray-200 rounded-lg p-2 hover:border-[#00855E] transition-colors cursor-pointer">
+                            <p class="text-sm text-gray-700">26</p>
+                        </div>
+                        <div
+                            class="aspect-square border border-gray-200 rounded-lg p-2 hover:border-[#00855E] transition-colors cursor-pointer">
+                            <p class="text-sm text-gray-700">27</p>
+                        </div>
+                        <div
+                            class="aspect-square border border-gray-200 rounded-lg p-2 hover:border-[#00855E] transition-colors cursor-pointer">
+                            <p class="text-sm text-gray-700">28</p>
+                        </div>
+                        <div
+                            class="aspect-square border border-gray-200 rounded-lg p-2 hover:border-[#00855E] transition-colors cursor-pointer">
+                            <p class="text-sm text-gray-700">29</p>
+                        </div>
+                        <div
+                            class="aspect-square border border-gray-200 rounded-lg p-2 hover:border-[#00855E] transition-colors cursor-pointer">
+                            <p class="text-sm text-gray-700">30</p>
+                        </div>
+                    </div>
+
+                    <!-- Legend -->
+                    <div class="mt-6 pt-6 border-t border-gray-200">
+                        <p class="text-sm font-medium text-gray-700 mb-3">Task Types:</p>
+                        <div class="flex flex-wrap gap-4">
+                            <div class="flex items-center gap-2">
+                                <div class="w-3 h-3 bg-blue-500 rounded-full"></div>
+                                <span class="text-sm text-gray-600">Watering</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                                <span class="text-sm text-gray-600">Fertilizing</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-3 h-3 bg-purple-500 rounded-full"></div>
+                                <span class="text-sm text-gray-600">Pruning</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                                <span class="text-sm text-gray-600">Custom</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Today's Tasks -->
+                <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-6">Today's Tasks</h2>
+
+                    <div class="space-y-4">
+                        <!-- Task Item -->
+                        <div class="p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                            <div class="flex items-start justify-between mb-2">
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-droplet text-blue-600"></i>
+                                    <span class="text-sm font-medium text-blue-800">Watering</span>
+                                </div>
+                                <span class="text-xs text-blue-600">10:00 AM</span>
+                            </div>
+                            <p class="text-gray-800 font-medium mb-1">My First Plant</p>
+                            <p class="text-sm text-gray-600 mb-3">Water thoroughly until it drains</p>
+                            <button
+                                class="w-full cursor-pointer bg-blue-600 text-white py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors">
+                                Mark Complete
+                            </button>
+                        </div>
+
+                        <!-- Task Item -->
+                        <div class="p-4 bg-green-50 border border-green-200 rounded-lg">
+                            <div class="flex items-start justify-between mb-2">
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-flask text-green-600"></i>
+                                    <span class="text-sm font-medium text-green-800">Fertilizing</span>
+                                </div>
+                                <span class="text-xs text-green-600">2:00 PM</span>
+                            </div>
+                            <p class="text-gray-800 font-medium mb-1">Snake Plant</p>
+                            <p class="text-sm text-gray-600 mb-3">Use liquid fertilizer, diluted</p>
+                            <button
+                                class="w-full cursor-pointer bg-green-600 text-white py-2 rounded-lg text-sm font-medium hover:bg-green-700 transition-colors">
+                                Mark Complete
+                            </button>
+                        </div>
+
+                        <!-- Task Item -->
+                        <div class="p-4 bg-purple-50 border border-purple-200 rounded-lg">
+                            <div class="flex items-start justify-between mb-2">
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-scissors text-purple-600"></i>
+                                    <span class="text-sm font-medium text-purple-800">Pruning</span>
+                                </div>
+                                <span class="text-xs text-purple-600">4:00 PM</span>
+                            </div>
+                            <p class="text-gray-800 font-medium mb-1">Peace Lily</p>
+                            <p class="text-sm text-gray-600 mb-3">Remove dead leaves and flowers</p>
+                            <button
+                                class="w-full cursor-pointer bg-purple-600 text-white py-2 rounded-lg text-sm font-medium hover:bg-purple-700 transition-colors">
+                                Mark Complete
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Completed Tasks -->
+                    <div class="mt-6 pt-6 border-t border-gray-200">
+                        <p class="text-sm font-medium text-gray-600 mb-3">Completed Today (1)</p>
+                        <div class="p-3 bg-gray-50 rounded-lg">
+                            <div class="flex items-center gap-2 mb-1">
+                                <i class="fa-solid fa-check-circle text-green-600"></i>
+                                <span class="text-sm text-gray-500 line-through">Pruning My First Plant</span>
+                            </div>
+                            <p class="text-xs text-gray-500 ml-6">Completed at 9:30 AM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upcoming Tasks -->
+            <div class="mt-8 bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-xl font-semibold text-gray-800">Upcoming This Week</h2>
+                    <button class="text-[#00855E] text-sm font-medium cursor-pointer hover:underline">View All</button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <!-- Upcoming Task Card -->
+                    <div class="p-4 border border-gray-200 rounded-lg hover:border-[#00855E] transition-colors">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-medium text-gray-500">Friday</span>
+                            <i class="fa-solid fa-droplet text-blue-500"></i>
+                        </div>
+                        <p class="font-medium text-gray-800 mb-1">Pothos</p>
+                        <p class="text-sm text-gray-600">Nov 8, 10:00 AM</p>
+                    </div>
+
+                    <!-- Upcoming Task Card -->
+                    <div class="p-4 border border-gray-200 rounded-lg hover:border-[#00855E] transition-colors">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-medium text-gray-500">Sunday</span>
+                            <i class="fa-solid fa-flask text-green-500"></i>
+                        </div>
+                        <p class="font-medium text-gray-800 mb-1">Orchid</p>
+                        <p class="text-sm text-gray-600">Nov 10, 11:00 AM</p>
+                    </div>
+
+                    <!-- Upcoming Task Card -->
+                    <div class="p-4 border border-gray-200 rounded-lg hover:border-[#00855E] transition-colors">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-medium text-gray-500">Sunday</span>
+                            <i class="fa-solid fa-scissors text-purple-500"></i>
+                        </div>
+                        <p class="font-medium text-gray-800 mb-1">My First Plant</p>
+                        <p class="text-sm text-gray-600">Nov 10, 13:00 AM</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- Hamburger Button (Mobile Only) -->
+        <button id="menuBtn"
+            class="fixed bottom-6 right-6 bg-[#00855E] text-white p-4 rounded-full shadow-lg lg:hidden z-50 hover:bg-green-700 transition-colors">
+            <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+    </div>
+
+    <!-- Show Navbar Mobile -->
+    <script src="js/user-navbar.js"></script>
+
+    <!-- Modal -->
+    <script src="js/function-modal.js"></script>
+
+    <!-- Select Tab -->
+    <script src="js/select-tab.js"></script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</body>
+
+</html>

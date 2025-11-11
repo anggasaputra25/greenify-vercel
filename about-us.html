@@ -1,0 +1,489 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greenify - Grow with Nature</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
+    <!-- Font Google Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Style Tailwind -->
+    <link href="./css/output.css" rel="stylesheet">
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav data-aos="fade-down" class="fixed bg-white h-20 flex items-center w-full justify-between px-5 md:px-20 z-10">
+        <a href="index.html" class="text-2xl font-semibold flex gap-2 items-center text-[#00855E]"><img
+                src="assets/favicon.png" alt="logo" class="w-12"> Greenify</a>
+        <div class="hidden md:flex gap-8">
+            <a href="about-us.html" class="text-[#00855E] duration-100">About</a>
+            <a href="blog.html" class="hover:text-[#00855E] duration-100">Blog</a>
+        </div>
+        <div class="w-40 hidden md:flex justify-end">
+            <a href="login.html" class="bg-[#00855E] px-6 py-2 text-white rounded-lg font-semibold transition-colors duration-100 hover:bg-[#006B4C]">Login</a>
+        </div>
+        <button id="btn-bars" class="text-gray-600 h-10 w-10 flex md:hidden justify-center items-center">
+            <i class="fa-solid fa-bars text-2xl"></i>
+        </button>
+    </nav>
+
+    <!-- Navbar Mobile -->
+    <nav id="navbar-mobile" class="fixed w-full -left-full bg-white h-screen z-20 py-4 px-5 flex flex-col gap-5 duration-200">
+        <div class="flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-semibold flex gap-2 items-center text-[#00855E]"><img
+                src="assets/favicon.png" alt="logo" class="w-12"> Greenify</a>
+            <button id="btn-navbar-close" class="text-gray-600 h-10 w-10 flex md:hidden justify-center items-center">
+                <i class="fa-solid fa-xmark text-2xl text-gray-600"></i>
+            </button>
+        </div>
+        <div class="h-0.5 bg-gray-300"></div>
+        <div class="flex flex-col gap-2">
+            <a href="about-us.html" class="text-[#00855E] duration-100 font-medium">About</a>
+            <a href="blog.html" class="hover:text-[#00855E] duration-100 font-medium text-gray-600">Blog</a>
+        </div>
+        <a href="login.html" class="bg-[#00855E] px-6 py-3 text-white rounded-lg font-semibold transition-colors duration-100 hover:bg-[#006B4C] text-center">Login</a>
+    </nav>
+
+    <!-- Main -->
+    <main>
+        <!-- Hero Section -->
+        <section data-aos="fade-down"
+            class="pt-32 pb-24 px-5 md:px-20 bg-linear-to-br from-green-50 via-emerald-50 to-teal-50 relative overflow-hidden">
+            <!-- Decorative Elements -->
+            <div
+                class="absolute top-20 left-10 w-72 h-72 bg-green-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob">
+            </div>
+            <div
+                class="absolute top-40 right-10 w-72 h-72 bg-emerald-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000">
+            </div>
+            <div
+                class="absolute -bottom-8 left-1/2 w-72 h-72 bg-teal-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000">
+            </div>
+
+            <div class="max-w-7xl mx-auto relative">
+                <div class="text-center">
+                    <!-- Badge -->
+                    <div class="inline-block mb-6">
+                        <span
+                            class="inline-flex items-center gap-2 px-5 py-2.5 bg-white/80 backdrop-blur-sm text-[#00855E] rounded-full text-sm font-semibold shadow-sm border border-green-100">
+                            <i class="fa-solid fa-seedling"></i>
+                            <span>Est. 2020 • Trusted by 50K+ Plant Parents</span>
+                        </span>
+                    </div>
+
+                    <!-- Main Heading -->
+                    <h1 class="text-5xl md:text-7xl font-bold text-gray-900 mb-8 leading-tight">
+                        About Greenify
+                    </h1>
+
+                    <!-- Subtitle -->
+                    <p class="text-gray-700 text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed font-light mb-8">
+                        We're on a mission to make plant care <span
+                            class="text-[#00855E] font-semibold">accessible</span>, <span
+                            class="text-[#00855E] font-semibold">enjoyable</span>, and <span
+                            class="text-[#00855E] font-semibold">rewarding</span> for everyone
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Story Section -->
+        <section data-aos="fade-up" class="py-20 px-5 md:px-20">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Our Story</h2>
+                        <p class="text-gray-600 mb-4 leading-relaxed">Greenify was born from a simple observation: too
+                            many people wanted to care for plants but felt overwhelmed by the process. We saw beautiful
+                            houseplants wilting in homes, not from lack of care, but from lack of guidance.</p>
+                        <p class="text-gray-600 mb-4 leading-relaxed">In 2024, our founders—a team of plant enthusiasts,
+                            technologists, and educators—came together with a vision: to create a platform that would
+                            demystify plant care and build a supportive community of plant lovers.</p>
+                        <p class="text-gray-600 leading-relaxed">Today, Greenify serves thousands of users worldwide,
+                            helping them grow thriving indoor gardens and develop a deeper connection with nature.</p>
+                    </div>
+                    <div class="relative">
+                        <div
+                            class="aspect-square bg-linear-to-br from-green-400 to-emerald-600 rounded-2xl flex items-center justify-center shadow-2xl">
+                            <i class="fa-solid fa-seedling text-white text-9xl opacity-30"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission & Vision -->
+        <section data-aos="fade-up" class="py-20 px-5 md:px-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Mission -->
+                    <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+                        <div class="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mb-6">
+                            <i class="fa-solid fa-bullseye text-[#00855E] text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Our Mission</h3>
+                        <p class="text-gray-600 leading-relaxed">To empower everyone to successfully grow and care for
+                            plants through intelligent tools, comprehensive education, and a supportive community. We
+                            believe that bringing more greenery into homes not only beautifies spaces but also improves
+                            well-being and environmental awareness.</p>
+                    </div>
+
+                    <!-- Vision -->
+                    <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+                        <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                            <i class="fa-solid fa-eye text-blue-600 text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Our Vision</h3>
+                        <p class="text-gray-600 leading-relaxed">To create a world where every home has thriving plants
+                            and every person feels confident in their ability to care for them. We envision a global
+                            community united by a love for plants, sustainable living, and the joy of watching life
+                            grow.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Values -->
+        <section class="py-20 px-5 md:px-20">
+            <div class="max-w-7xl mx-auto">
+                <div data-aos="fade-up" class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Core Values</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">These principles guide everything we do at Greenify</p>
+                </div>
+
+                <div data-aos="fade-up" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Value 1 -->
+                    <div class="text-center p-6">
+                        <div
+                            class="w-20 h-20 bg-linear-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                            <i class="fa-solid fa-heart text-white text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Accessibility</h3>
+                        <p class="text-gray-600 text-sm">Plant care should be simple and achievable for everyone,
+                            regardless of experience level.</p>
+                    </div>
+
+                    <!-- Value 2 -->
+                    <div class="text-center p-6">
+                        <div
+                            class="w-20 h-20 bg-linear-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                            <i class="fa-solid fa-users text-white text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Community</h3>
+                        <p class="text-gray-600 text-sm">We grow together, sharing knowledge, celebrating successes, and
+                            supporting each other.</p>
+                    </div>
+
+                    <!-- Value 3 -->
+                    <div class="text-center p-6">
+                        <div
+                            class="w-20 h-20 bg-linear-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                            <i class="fa-solid fa-lightbulb text-white text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Innovation</h3>
+                        <p class="text-gray-600 text-sm">We leverage technology to make plant care smarter, easier, and
+                            more rewarding.</p>
+                    </div>
+
+                    <!-- Value 4 -->
+                    <div class="text-center p-6">
+                        <div
+                            class="w-20 h-20 bg-linear-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                            <i class="fa-solid fa-leaf text-white text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Sustainability</h3>
+                        <p class="text-gray-600 text-sm">We promote eco-friendly practices and environmental stewardship
+                            in all we do.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="py-20 px-5 md:px-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto">
+                <div data-aos="fade-up" class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Meet Our Team</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Passionate individuals dedicated to making plant care
+                        accessible</p>
+                </div>
+
+                <div data-aos="fade-up" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Team Member 1 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="h-64 bg-linear-to-br from-green-400 to-green-600 flex items-center justify-center">
+                            <i class="fa-solid fa-user text-white text-7xl opacity-30"></i>
+                        </div>
+                        <div class="p-6 text-center">
+                            <h3 class="text-xl font-bold text-gray-800 mb-1">Sarah Mitchell</h3>
+                            <p class="text-[#00855E] font-medium text-sm mb-3">Founder & CEO</p>
+                            <p class="text-gray-600 text-sm mb-4">Plant biologist with 15+ years experience in
+                                horticulture</p>
+                            <div class="flex justify-center gap-3">
+                                <a href="#"
+                                    class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center hover:bg-[#00855E] hover:text-white transition-colors">
+                                    <i class="fa-brands fa-linkedin-in text-sm"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center hover:bg-[#00855E] hover:text-white transition-colors">
+                                    <i class="fa-brands fa-twitter text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Member 2 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+                        <div class="h-64 bg-linear-to-br from-blue-400 to-blue-600 flex items-center justify-center">
+                            <i class="fa-solid fa-user text-white text-7xl opacity-30"></i>
+                        </div>
+                        <div class="p-6 text-center">
+                            <h3 class="text-xl font-bold text-gray-800 mb-1">David Chen</h3>
+                            <p class="text-[#00855E] font-medium text-sm mb-3">CTO</p>
+                            <p class="text-gray-600 text-sm mb-4">AI specialist bringing technology to plant care</p>
+                            <div class="flex justify-center gap-3">
+                                <a href="#"
+                                    class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center hover:bg-[#00855E] hover:text-white transition-colors">
+                                    <i class="fa-brands fa-linkedin-in text-sm"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center hover:bg-[#00855E] hover:text-white transition-colors">
+                                    <i class="fa-brands fa-twitter text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Member 3 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+                        <div
+                            class="h-64 bg-linear-to-br from-purple-400 to-purple-600 flex items-center justify-center">
+                            <i class="fa-solid fa-user text-white text-7xl opacity-30"></i>
+                        </div>
+                        <div class="p-6 text-center">
+                            <h3 class="text-xl font-bold text-gray-800 mb-1">Emma Rodriguez</h3>
+                            <p class="text-[#00855E] font-medium text-sm mb-3">Head of Education</p>
+                            <p class="text-gray-600 text-sm mb-4">Certified educator passionate about plant knowledge
+                            </p>
+                            <div class="flex justify-center gap-3">
+                                <a href="#"
+                                    class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center hover:bg-[#00855E] hover:text-white transition-colors">
+                                    <i class="fa-brands fa-linkedin-in text-sm"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center hover:bg-[#00855E] hover:text-white transition-colors">
+                                    <i class="fa-brands fa-twitter text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Member 4 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+                        <div
+                            class="h-64 bg-linear-to-br from-orange-400 to-orange-600 flex items-center justify-center">
+                            <i class="fa-solid fa-user text-white text-7xl opacity-30"></i>
+                        </div>
+                        <div class="p-6 text-center">
+                            <h3 class="text-xl font-bold text-gray-800 mb-1">Michael Johnson</h3>
+                            <p class="text-[#00855E] font-medium text-sm mb-3">Community Manager</p>
+                            <p class="text-gray-600 text-sm mb-4">Building connections in our growing plant community
+                            </p>
+                            <div class="flex justify-center gap-3">
+                                <a href="#"
+                                    class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center hover:bg-[#00855E] hover:text-white transition-colors">
+                                    <i class="fa-brands fa-linkedin-in text-sm"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center hover:bg-[#00855E] hover:text-white transition-colors">
+                                    <i class="fa-brands fa-twitter text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="py-20 px-5 md:px-20 bg-linear-to-br from-[#00855E] to-green-600 text-white">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Greenify by the Numbers</h2>
+                    <p class="text-white/90 max-w-2xl mx-auto">Our impact on the plant-loving community</p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <!-- Stat 1 -->
+                    <div class="text-center">
+                        <div class="text-4xl md:text-5xl font-bold mb-2">10K+</div>
+                        <p class="text-white/80">Active Users</p>
+                    </div>
+
+                    <!-- Stat 2 -->
+                    <div class="text-center">
+                        <div class="text-4xl md:text-5xl font-bold mb-2">50K+</div>
+                        <p class="text-white/80">Plants Tracked</p>
+                    </div>
+
+                    <!-- Stat 3 -->
+                    <div class="text-center">
+                        <div class="text-4xl md:text-5xl font-bold mb-2">100+</div>
+                        <p class="text-white/80">Expert Courses</p>
+                    </div>
+
+                    <!-- Stat 4 -->
+                    <div class="text-center">
+                        <div class="text-4xl md:text-5xl font-bold mb-2">95%</div>
+                        <p class="text-white/80">Success Rate</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 px-5 md:px-20">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Join Our Growing Community</h2>
+                <p class="text-gray-600 text-lg mb-8">Start your plant care journey today and connect with thousands of
+                    plant enthusiasts worldwide</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="register.html"
+                        class="bg-[#00855E] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#006d4d] transition-colors">
+                        Get Started Free
+                    </a>
+                    <a href="#"
+                        class="bg-white border-2 border-[#00855E] text-[#00855E] px-8 py-4 rounded-lg font-semibold hover:bg-green-50 transition-colors">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white mt-20">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10 py-12">
+            <!-- Main Footer Content -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <!-- Brand Section -->
+                <div>
+                    <a href="index.html" class="flex items-center gap-2 mb-4">
+                        <img src="assets/favicon.png" alt="logo" class="w-10">
+                        <p class="font-semibold text-2xl">Greenify</p>
+                    </a>
+                    <p class="text-gray-400 text-sm mb-4">
+                        Making plant care accessible and enjoyable for everyone. Join our growing community of plant
+                        enthusiasts!
+                    </p>
+                    <div class="flex gap-3">
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#00855E] transition-colors">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#00855E] transition-colors">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#00855E] transition-colors">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#00855E] transition-colors">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="about-us.html" class="hover:text-[#00855E] transition-colors">About</a></li>
+                        <li><a href="blog.html" class="hover:text-[#00855E] transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Support</h3>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-[#00855E] transition-colors">Help Center</a></li>
+                        <li><a href="#" class="hover:text-[#00855E] transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-[#00855E] transition-colors">FAQs</a></li>
+                        <li><a href="#" class="hover:text-[#00855E] transition-colors">Community Forum</a></li>
+                        <li><a href="#" class="hover:text-[#00855E] transition-colors">Report a Bug</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Company</h3>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="about-us.html" class="hover:text-[#00855E] transition-colors">About Us</a></li>
+                        <li><a href="blog.html" class="hover:text-[#00855E] transition-colors">Blog</a></li>
+                        <li><a href="#" class="hover:text-[#00855E] transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-[#00855E] transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Newsletter Section -->
+            <div class="border-t border-gray-800 pt-8 mb-8">
+                <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                    <div class="flex-1">
+                        <h3 class="font-semibold text-lg mb-2">Subscribe to Our Newsletter</h3>
+                        <p class="text-gray-400 text-sm">Get weekly plant care tips and updates delivered to your inbox!
+                        </p>
+                    </div>
+                    <div class="flex gap-2 w-full md:w-auto flex-col md:flex-row">
+                        <input type="email" placeholder="Enter your email"
+                            class="flex-1 md:w-64 px-4 py-2.5 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#00855E] focus:ring-2 focus:ring-[#00855E]/20">
+                        <button
+                            class="bg-[#00855E] text-white px-6 py-2.5 rounded-lg font-medium hover:bg-[#006d4d] transition-colors whitespace-nowrap">
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Footer -->
+            <div
+                class="border-t border-gray-800 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-400">
+                <p>© 2025 Greenify. All rights reserved.</p>
+                <div class="flex items-center gap-6">
+                    <a href="#" class="hover:text-[#00855E] transition-colors">Privacy</a>
+                    <a href="#" class="hover:text-[#00855E] transition-colors">Terms</a>
+                    <a href="#" class="hover:text-[#00855E] transition-colors">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Show Navbar Mobile -->
+    <script src="js/show-navbar-mobile.js"></script>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/aos.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greenify - Profile</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
+    <!-- Font Google Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Style Tailwind -->
+    <link href="./css/output.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-50">
+    <div class="flex">
+        <!-- Navbar -->
+        <nav
+            class="w-full lg:w-1/4 p-10 fixed -left-full lg:static flex flex-col justify-between min-h-screen shadow-md bg-white transition-all duration-300 ease">
+            <div class="flex flex-col gap-5">
+                <div class="flex items-center gap-2">
+                    <img src="assets/favicon.png" alt="logo" class="w-13">
+                    <p class="font-semibold text-2xl text-[#00855E]">Greenify</p>
+                </div>
+                <div class="h-0.5 bg-gray-300"></div>
+                <div class="flex flex-col">
+                    <a href="dashboard.html"
+                        class="font-medium py-2.5 text-gray-600 transition-all duration-200 hover:pl-2"><i
+                            class="fa-solid fa-chart-diagram"></i> Overview</a>
+                    <a href="virtual-forest.html"
+                        class="font-medium py-2.5 text-gray-600 transition-all duration-200 hover:pl-2"><i
+                            class="fa-solid fa-leaf"></i> Virtual Forest</a>
+                    <a href="grow-calendar.html"
+                        class="font-medium py-2.5 text-gray-600 transition-all duration-200 hover:pl-2"><i
+                            class="fa-solid fa-calendar-days"></i> Grow Calendar</a>
+                    <a href="green-journey.html"
+                        class="font-medium py-2.5 text-gray-600 transition-all duration-200 hover:pl-2"><i
+                            class="fa-solid fa-camera"></i> Green Journey</a>
+                    <a href="green-courses.html"
+                        class="font-medium py-2.5 text-gray-600 transition-all duration-200 hover:pl-2"><i
+                            class="fa-solid fa-brain"></i> Green Courses</a>
+                    <a href="ai-gardener.html"
+                        class="font-medium py-2.5 text-gray-600 transition-all duration-200 hover:pl-2"><i
+                            class="fa-solid fa-robot"></i> AI Gardener</a>
+                    <a href="profile.html" class="font-medium py-2.5 text-[#00855E]"><i class="fa-solid fa-user"></i>
+                        Profile</a>
+                </div>
+            </div>
+            <div class="flex flex-col gap-5">
+                <div class="h-0.5 bg-gray-300"></div>
+                <a href="index.html"
+                    class="font-medium text-gray-600 hover:text-red-600 w-fit transition-colors duration-100"><i
+                        class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out</a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="w-full lg:w-3/4 p-10 overflow-y-scroll lg:h-screen">
+            <!-- Header -->
+            <div class="mb-8">
+                <h1 class="text-3xl font-semibold text-gray-800 mb-2">Friend List</h1>
+                <p class="text-gray-600">See all the plants your friends have planted</p>
+            </div>
+
+            <!-- Profile Overview -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden mb-8">
+                <!-- Profile Info -->
+                <div class="px-8 py-8">
+                    <div class="flex flex-col md:flex-row items-start md:items-center gap-6">
+                        <!-- Profile Picture -->
+                        <div class="relative">
+                            <img src="assets/angga.jpg"
+                                class="object-cover w-32 h-32 bg-gray-300 rounded-full border-4 border-white shadow-lg flex items-center justify-center">
+                        </div>
+
+                        <!-- User Info -->
+                        <div class="flex-1">
+                            <h2 class="text-2xl font-semibold text-gray-800">Angga Saputra</h2>
+                            <p class="text-gray-600">@anggaaja</p>
+                            <a href="friend-list.html" class="text-gray-600 hover:underline">6 Friends</a>
+                            <div class="flex items-center gap-4 mt-1">
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-calendar text-gray-500 text-sm"></i>
+                                    <span class="text-sm text-gray-600">Joined July 2025</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-location-dot text-gray-500 text-sm"></i>
+                                    <span class="text-sm text-gray-600">Singaraja, Bali</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="profile.html"
+                            class="cursor-pointer bg-[#00855E] text-white px-6 py-2.5 rounded-lg font-medium hover:bg-[#006d4d] transition-colors">
+                            View Profile
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile 2 -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden mb-8">
+                <!-- Profile Info -->
+                <div class="px-8 py-8">
+                    <div class="flex flex-col md:flex-row items-start md:items-center gap-6">
+                        <!-- Profile Picture -->
+                        <div class="relative">
+                            <img src="assets/adi.jpg"
+                                class="object-cover w-32 h-32 bg-gray-300 rounded-full border-4 border-white shadow-lg flex items-center justify-center">
+                        </div>
+
+                        <!-- User Info -->
+                        <div class="flex-1">
+                            <h2 class="text-2xl font-semibold text-gray-800">Putu Adi</h2>
+                            <p class="text-gray-600">@putuadi</p>
+                            <a href="friend-list.html" class="text-gray-600 hover:underline">10 Friends</a>
+                            <div class="flex items-center gap-4 mt-1">
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-calendar text-gray-500 text-sm"></i>
+                                    <span class="text-sm text-gray-600">Joined May 2023</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-location-dot text-gray-500 text-sm"></i>
+                                    <span class="text-sm text-gray-600">Kintamani, Bali</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="profile.html"
+                            class="cursor-pointer bg-[#00855E] text-white px-6 py-2.5 rounded-lg font-medium hover:bg-[#006d4d] transition-colors">
+                            View Profile
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile 3 -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden mb-8">
+                <!-- Profile Info -->
+                <div class="px-8 py-8">
+                    <div class="flex flex-col md:flex-row items-start md:items-center gap-6">
+                        <!-- Profile Picture -->
+                        <div class="relative">
+                            <img src="assets/widhyatama.jpg"
+                                class="object-cover w-32 h-32 bg-gray-300 rounded-full border-4 border-white shadow-lg flex items-center justify-center">
+                        </div>
+
+                        <!-- User Info -->
+                        <div class="flex-1">
+                            <h2 class="text-2xl font-semibold text-gray-800">Putu Widhyatama</h2>
+                            <p class="text-gray-600">@widhyatama</p>
+                            <a href="friend-list.html" class="text-gray-600 hover:underline">15 Friends</a>
+                            <div class="flex items-center gap-4 mt-1">
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-calendar text-gray-500 text-sm"></i>
+                                    <span class="text-sm text-gray-600">Joined January 2025</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-location-dot text-gray-500 text-sm"></i>
+                                    <span class="text-sm text-gray-600">Denpasar, Bali</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="profile.html"
+                            class="cursor-pointer bg-[#00855E] text-white px-6 py-2.5 rounded-lg font-medium hover:bg-[#006d4d] transition-colors">
+                            View Profile
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- Hamburger Button (Mobile Only) -->
+        <button id="menuBtn"
+            class="fixed bottom-6 right-6 bg-[#00855E] text-white p-4 rounded-full shadow-lg lg:hidden z-50 hover:bg-green-700 transition-colors">
+            <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+    </div>
+
+    <!-- Show Navbar Mobile -->
+    <script src="js/user-navbar.js"></script>
+</body>
+
+</html>

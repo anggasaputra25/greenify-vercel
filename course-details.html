@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greenify - Indoor Gardening Basics</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
+    <!-- Font Google Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Style Tailwind -->
+    <link href="./css/output.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-50">
+    <div class="flex">
+        <!-- Navbar -->
+        <nav
+            class="w-full lg:w-1/4 p-10 fixed -left-full lg:static flex flex-col justify-between min-h-screen shadow-md bg-white transition-all duration-300 ease">
+            <div class="flex flex-col gap-5">
+                <div class="flex items-center gap-2">
+                    <img src="assets/favicon.png" alt="logo" class="w-13">
+                    <p class="font-semibold text-2xl text-[#00855E]">Greenify</p>
+                </div>
+                <div class="h-0.5 bg-gray-300"></div>
+                <div class="flex flex-col">
+                    <a href="dashboard.html"
+                        class="font-medium py-2.5 text-gray-600 transition-all duration-200 hover:pl-2"><i
+                            class="fa-solid fa-chart-diagram"></i> Overview</a>
+                    <a href="virtual-forest.html"
+                        class="font-medium py-2.5 text-gray-600 transition-all duration-200 hover:pl-2"><i
+                            class="fa-solid fa-leaf"></i> Virtual Forest</a>
+                    <a href="grow-calendar.html"
+                        class="font-medium py-2.5 text-gray-600 transition-all duration-200 hover:pl-2"><i
+                            class="fa-solid fa-calendar-days"></i> Grow Calendar</a>
+                    <a href="green-journey.html"
+                        class="font-medium py-2.5 text-gray-600 transition-all duration-200 hover:pl-2"><i
+                            class="fa-solid fa-camera"></i> Green Journey</a>
+                    <a href="green-courses.html" class="font-medium py-2.5 text-[#00855E]"><i
+                            class="fa-solid fa-brain"></i> Green Courses</a>
+                    <a href="ai-gardener.html"
+                        class="font-medium py-2.5 text-gray-600 transition-all duration-200 hover:pl-2"><i
+                            class="fa-solid fa-robot"></i> AI Gardener</a>
+                    <a href="profile.html"
+                        class="font-medium py-2.5 text-gray-600 transition-all duration-200 hover:pl-2"><i
+                            class="fa-solid fa-user"></i> Profile</a>
+                </div>
+            </div>
+            <div class="flex flex-col gap-5">
+                <div class="h-0.5 bg-gray-300"></div>
+                <a href="index.html"
+                    class="font-medium text-gray-600 hover:text-red-600 w-fit transition-colors duration-100"><i
+                        class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out</a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="w-full lg:w-3/4 p-10 overflow-y-scroll lg:h-screen">
+            <!-- Breadcrumb -->
+            <div class="mb-6">
+                <div class="flex items-center gap-2 text-sm text-gray-600">
+                    <a href="green-courses.html" class="hover:text-[#00855E]">Green Courses</a>
+                    <i class="fa-solid fa-chevron-right text-xs"></i>
+                    <span class="text-gray-800">Indoor Gardening Basics</span>
+                </div>
+            </div>
+
+            <!-- Course Header -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden mb-8">
+                <!-- Course Banner -->
+                <div class="h-64 bg-linear-to-br from-teal-400 to-teal-600 flex items-center justify-center relative">
+                    <img src="assets/plant_7.jpg" alt="course" class="h-full w-full object-cover">
+                    <div class="absolute bottom-6 left-6 right-6">
+                        <span
+                            class="px-3 py-1 bg-yellow-100 text-yellow-700 text-xs font-semibold rounded-full">Beginner</span>
+                    </div>
+                </div>
+
+                <!-- Course Info -->
+                <div class="p-8">
+                    <div class="mb-6">
+                        <h1 class="text-3xl font-bold text-gray-800 mb-3">Indoor Gardening Basics</h1>
+                        <p class="text-gray-600 text-lg mb-4">Start your indoor garden journey with confidence. Learn
+                            the fundamentals of choosing, caring for, and maintaining healthy houseplants.</p>
+
+                        <!-- Course Meta -->
+                        <div class="flex flex-wrap items-center gap-6 text-sm text-gray-600">
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-clock text-[#00855E]"></i>
+                                <span>5 hours</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-book text-[#00855E]"></i>
+                                <span>15 lessons</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-signal text-[#00855E]"></i>
+                                <span>Beginner Level</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-users text-[#00855E]"></i>
+                                <span>1,247 students</span>
+                            </div>
+                        </div>
+
+                        <!-- Rating -->
+                        <div class="flex items-center gap-2 mt-4">
+                            <div class="flex items-center text-yellow-500">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="text-gray-600 text-sm">5.0 (124 reviews)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course Content Layout -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Main Content -->
+                <div class="lg:col-span-2 space-y-6">
+                    <!-- What You'll Learn -->
+                    <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                        <h2 class="text-2xl font-semibold text-gray-800 mb-4">What You'll Learn</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="flex items-start gap-3">
+                                <div class="bg-green-100 p-2 rounded-lg mt-1">
+                                    <i class="fa-solid fa-check text-[#00855E]"></i>
+                                </div>
+                                <p class="text-gray-700">Choose the right plants for your space and light conditions</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="bg-green-100 p-2 rounded-lg mt-1">
+                                    <i class="fa-solid fa-check text-[#00855E]"></i>
+                                </div>
+                                <p class="text-gray-700">Master proper watering techniques and schedules</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="bg-green-100 p-2 rounded-lg mt-1">
+                                    <i class="fa-solid fa-check text-[#00855E]"></i>
+                                </div>
+                                <p class="text-gray-700">Understand soil types and potting basics</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="bg-green-100 p-2 rounded-lg mt-1">
+                                    <i class="fa-solid fa-check text-[#00855E]"></i>
+                                </div>
+                                <p class="text-gray-700">Identify and solve common plant problems</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="bg-green-100 p-2 rounded-lg mt-1">
+                                    <i class="fa-solid fa-check text-[#00855E]"></i>
+                                </div>
+                                <p class="text-gray-700">Learn fertilizing and feeding schedules</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="bg-green-100 p-2 rounded-lg mt-1">
+                                    <i class="fa-solid fa-check text-[#00855E]"></i>
+                                </div>
+                                <p class="text-gray-700">Create a thriving indoor garden environment</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course Curriculum -->
+                    <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                        <h2 class="text-2xl font-semibold text-gray-800 mb-6">Course Curriculum</h2>
+
+                        <!-- Section 1 -->
+                        <div class="mb-4">
+                            <div class="accordion-header flex items-center justify-between p-4 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors"
+                                data-target="section-1">
+                                <div class="flex items-center gap-3">
+                                    <i class="fa-solid fa-chevron-right text-gray-600 accordion-icon"></i>
+                                    <div>
+                                        <h3 class="font-semibold text-gray-800">Section 1: Getting Started</h3>
+                                        <p class="text-sm text-gray-600">5 lessons · 1 hour</p>
+                                    </div>
+                                </div>
+                                <span class="text-sm text-gray-600 hidden md:block">0/5 completed</span>
+                            </div>
+
+                            <!-- Lessons -->
+                            <div id="section-1" class="accordion-content mt-2 ml-8 space-y-2 hidden">
+                                <div
+                                    class="flex items-center justify-between p-3 hover:bg-gray-50 rounded-lg cursor-pointer">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fa-solid fa-play-circle text-[#00855E]"></i>
+                                        <span class="text-gray-700">Welcome to Indoor Gardening</span>
+                                    </div>
+                                    <span class="text-sm text-gray-500 hidden md:block">8 min</span>
+                                </div>
+                                <div
+                                    class="flex items-center justify-between p-3 hover:bg-gray-50 rounded-lg cursor-pointer">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fa-solid fa-play-circle text-gray-400"></i>
+                                        <span class="text-gray-700">Understanding Plant Needs</span>
+                                    </div>
+                                    <span class="text-sm text-gray-500 hidden md:block">12 min</span>
+                                </div>
+                                <div
+                                    class="flex items-center justify-between p-3 hover:bg-gray-50 rounded-lg cursor-pointer">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fa-solid fa-play-circle text-gray-400"></i>
+                                        <span class="text-gray-700">Choosing Your First Plants</span>
+                                    </div>
+                                    <span class="text-sm text-gray-500 hidden md:block">15 min</span>
+                                </div>
+                                <div
+                                    class="flex items-center justify-between p-3 hover:bg-gray-50 rounded-lg cursor-pointer">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fa-solid fa-file-lines text-gray-400"></i>
+                                        <span class="text-gray-700">Quiz: Getting Started</span>
+                                    </div>
+                                    <span class="text-sm text-gray-500 hidden md:block">5 questions</span>
+                                </div>
+                                <div
+                                    class="flex items-center justify-between p-3 hover:bg-gray-50 rounded-lg cursor-pointer">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fa-solid fa-download text-gray-400"></i>
+                                        <span class="text-gray-700">Downloadable: Plant Selection Guide</span>
+                                    </div>
+                                    <span class="text-sm text-gray-500 hidden md:block">PDF</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Section 2 -->
+                        <div class="mb-4">
+                            <div class="accordion-header flex items-center justify-between p-4 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors"
+                                data-target="section-2">
+                                <div class="flex items-center gap-3">
+                                    <i class="fa-solid fa-chevron-right text-gray-600 accordion-icon"></i>
+                                    <div>
+                                        <h3 class="font-semibold text-gray-800">Section 2: Essential Care Techniques
+                                        </h3>
+                                        <p class="text-sm text-gray-600">5 lessons · 1.5 hours</p>
+                                    </div>
+                                </div>
+                                <span class="text-sm text-gray-600 hidden md:block">0/5 completed</span>
+                            </div>
+
+                            <!-- Lessons -->
+                            <div id="section-2" class="accordion-content mt-2 ml-8 space-y-2 hidden">
+                                <div
+                                    class="flex items-center justify-between p-3 hover:bg-gray-50 rounded-lg cursor-pointer">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fa-solid fa-play-circle text-[#00855E]"></i>
+                                        <span class="text-gray-700">Watering and Drainage Basics</span>
+                                    </div>
+                                    <span class="text-sm text-gray-500 hidden md:block">15 min</span>
+                                </div>
+                                <div
+                                    class="flex items-center justify-between p-3 hover:bg-gray-50 rounded-lg cursor-pointer">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fa-solid fa-play-circle text-gray-400"></i>
+                                        <span class="text-gray-700">Light Management Indoors</span>
+                                    </div>
+                                    <span class="text-sm text-gray-500 hidden md:block">20 min</span>
+                                </div>
+                                <div
+                                    class="flex items-center justify-between p-3 hover:bg-gray-50 rounded-lg cursor-pointer">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fa-solid fa-play-circle text-gray-400"></i>
+                                        <span class="text-gray-700">Soil Types and Fertilization</span>
+                                    </div>
+                                    <span class="text-sm text-gray-500 hidden md:block">25 min</span>
+                                </div>
+                                <div
+                                    class="flex items-center justify-between p-3 hover:bg-gray-50 rounded-lg cursor-pointer">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fa-solid fa-file-lines text-gray-400"></i>
+                                        <span class="text-gray-700">Quiz: Essential Care</span>
+                                    </div>
+                                    <span class="text-sm text-gray-500 hidden md:block">6 questions</span>
+                                </div>
+                                <div
+                                    class="flex items-center justify-between p-3 hover:bg-gray-50 rounded-lg cursor-pointer">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fa-solid fa-download text-gray-400"></i>
+                                        <span class="text-gray-700">Downloadable: Watering Schedule Template</span>
+                                    </div>
+                                    <span class="text-sm text-gray-500 hidden md:block">PDF</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Section 3 -->
+                        <div class="mb-4">
+                            <div class="accordion-header flex items-center justify-between p-4 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors"
+                                data-target="section-3">
+                                <div class="flex items-center gap-3">
+                                    <i class="fa-solid fa-chevron-right text-gray-600 accordion-icon"></i>
+                                    <div>
+                                        <h3 class="font-semibold text-gray-800">Section 3: Troubleshooting & Problem
+                                            Solving</h3>
+                                        <p class="text-sm text-gray-600">5 lessons · 2 hours</p>
+                                    </div>
+                                </div>
+                                <span class="text-sm text-gray-600 hidden md:block">0/5 completed</span>
+                            </div>
+
+                            <!-- Lessons -->
+                            <div id="section-3" class="accordion-content mt-2 ml-8 space-y-2 hidden">
+                                <div
+                                    class="flex items-center justify-between p-3 hover:bg-gray-50 rounded-lg cursor-pointer">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fa-solid fa-play-circle text-[#00855E]"></i>
+                                        <span class="text-gray-700">Identifying Common Plant Problems</span>
+                                    </div>
+                                    <span class="text-sm text-gray-500 hidden md:block">20 min</span>
+                                </div>
+                                <div
+                                    class="flex items-center justify-between p-3 hover:bg-gray-50 rounded-lg cursor-pointer">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fa-solid fa-play-circle text-gray-400"></i>
+                                        <span class="text-gray-700">Pest Control and Prevention</span>
+                                    </div>
+                                    <span class="text-sm text-gray-500 hidden md:block">25 min</span>
+                                </div>
+                                <div
+                                    class="flex items-center justify-between p-3 hover:bg-gray-50 rounded-lg cursor-pointer">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fa-solid fa-play-circle text-gray-400"></i>
+                                        <span class="text-gray-700">Dealing with Overwatering and Root Rot</span>
+                                    </div>
+                                    <span class="text-sm text-gray-500 hidden md:block">30 min</span>
+                                </div>
+                                <div
+                                    class="flex items-center justify-between p-3 hover:bg-gray-50 rounded-lg cursor-pointer">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fa-solid fa-file-lines text-gray-400"></i>
+                                        <span class="text-gray-700">Quiz: Troubleshooting Skills</span>
+                                    </div>
+                                    <span class="text-sm text-gray-500 hidden md:block">7 questions</span>
+                                </div>
+                                <div
+                                    class="flex items-center justify-between p-3 hover:bg-gray-50 rounded-lg cursor-pointer">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fa-solid fa-download text-gray-400"></i>
+                                        <span class="text-gray-700">Downloadable: Plant Health Checklist</span>
+                                    </div>
+                                    <span class="text-sm text-gray-500 hidden md:block">PDF</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course Description -->
+                    <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                        <h2 class="text-2xl font-semibold text-gray-800 mb-4">About This Course</h2>
+                        <div class="prose max-w-none text-gray-700 space-y-4">
+                            <p>Welcome to Indoor Gardening Basics! This comprehensive beginner-friendly course is
+                                designed to help you start and maintain a thriving indoor garden, regardless of your
+                                experience level.</p>
+
+                            <p>Whether you live in a small apartment or a spacious house, this course will teach you
+                                everything you need to know to successfully grow beautiful, healthy plants indoors.
+                                You'll learn how to assess your space, choose the right plants, and provide them with
+                                the care they need to flourish.</p>
+
+                            <h3 class="text-lg font-semibold text-gray-800 mt-6 mb-3">What Makes This Course Special:
+                            </h3>
+                            <ul class="space-y-2">
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-leaf text-[#00855E] mt-1"></i>
+                                    <span>Practical, hands-on lessons you can apply immediately</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-leaf text-[#00855E] mt-1"></i>
+                                    <span>Easy-to-follow video tutorials and demonstrations</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-leaf text-[#00855E] mt-1"></i>
+                                    <span>Downloadable resources and cheat sheets</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-leaf text-[#00855E] mt-1"></i>
+                                    <span>Lifetime access to course materials</span>
+                                </li>
+                            </ul>
+
+                            <p class="mt-6">By the end of this course, you'll have the knowledge and confidence to
+                                create and maintain a beautiful indoor garden that brings life and freshness to your
+                                space!</p>
+                        </div>
+                    </div>
+
+                    <!-- Reviews -->
+                    <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                        <h2 class="text-2xl font-semibold text-gray-800 mb-6">Student Reviews</h2>
+
+                        <!-- Review Item -->
+                        <div class="mb-6 pb-6 border-b border-gray-200 last:border-0">
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 bg-purple-200 rounded-full flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-user text-purple-700"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <div>
+                                            <h4 class="font-semibold text-gray-800">Emily Chen</h4>
+                                            <div class="flex items-center text-yellow-500 text-sm mt-1">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                            </div>
+                                        </div>
+                                        <span class="text-sm text-gray-500">2 weeks ago</span>
+                                    </div>
+                                    <p class="text-gray-700">This course is absolutely perfect for beginners! The
+                                        instructor explains everything so clearly and the video demonstrations are super
+                                        helpful. I now have 5 thriving plants in my apartment! 🌿</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Review Item -->
+                        <div class="mb-6 pb-6 border-b border-gray-200 last:border-0">
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 bg-blue-200 rounded-full flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-user text-blue-700"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <div>
+                                            <h4 class="font-semibold text-gray-800">Michael Rodriguez</h4>
+                                            <div class="flex items-center text-yellow-500 text-sm mt-1">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                            </div>
+                                        </div>
+                                        <span class="text-sm text-gray-500">1 month ago</span>
+                                    </div>
+                                    <p class="text-gray-700">Great course! I learned so much about plant care that I
+                                        wish I knew earlier. The troubleshooting section saved my struggling monstera.
+                                        Highly recommend!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Review Item -->
+                        <div class="mb-6">
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 bg-green-200 rounded-full flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-user text-green-700"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <div>
+                                            <h4 class="font-semibold text-gray-800">Sarah Thompson</h4>
+                                            <div class="flex items-center text-yellow-500 text-sm mt-1">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                            </div>
+                                        </div>
+                                        <span class="text-sm text-gray-500">2 months ago</span>
+                                    </div>
+                                    <p class="text-gray-700">As someone who killed every plant I touched, this course
+                                        gave me confidence! The step-by-step approach is perfect. My home is finally
+                                        green and alive!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="text-[#00855E] font-medium hover:underline">
+                            View All 124 Reviews <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="space-y-6">
+                    <!-- Course Progress -->
+                    <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                        <h3 class="font-semibold text-gray-800 mb-4">Your Progress</h3>
+                        <div class="mb-4">
+                            <div class="flex items-center justify-between text-sm mb-2">
+                                <span class="text-gray-600">Overall Progress</span>
+                                <span class="font-medium text-gray-800">0%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-[#00855E] h-2 rounded-full" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="space-y-2 text-sm text-gray-600">
+                            <div class="flex items-center justify-between">
+                                <span>Completed Lessons</span>
+                                <span class="font-medium">0/15</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span>Time Spent</span>
+                                <span class="font-medium">0 min</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Instructor -->
+                    <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                        <h3 class="font-semibold text-gray-800 mb-4">Instructor</h3>
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-12 h-12 bg-[#00855E] rounded-full flex items-center justify-center">
+                                <i class="fa-solid fa-user text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Dr. Jane Wilson</h4>
+                                <p class="text-sm text-gray-600">Plant Biologist</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-700 mb-3">20+ years of experience in horticulture and indoor
+                            gardening. Passionate about making plant care accessible to everyone.</p>
+                        <div class="grid grid-cols-3 gap-2 text-center text-sm">
+                            <div>
+                                <p class="font-semibold text-gray-800">15</p>
+                                <p class="text-gray-600 text-xs">Courses</p>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-800">12K</p>
+                                <p class="text-gray-600 text-xs">Students</p>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-800">4.9</p>
+                                <p class="text-gray-600 text-xs">Rating</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Related Courses -->
+                    <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                        <h3 class="font-semibold text-gray-800 mb-4">Related Courses</h3>
+                        <div class="space-y-4">
+                            <!-- Related Course Card -->
+                            <div
+                                class="border border-gray-200 rounded-lg p-3 hover:border-[#00855E] transition-colors cursor-pointer">
+                                <div class="flex gap-3">
+                                    <img src="assets/plant_5.jpg" alt="course"
+                                        class="h-16 w-16 object-cover rounded-lg">
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800 text-sm mb-1">Succulent Care 101</h4>
+                                        <p class="text-xs text-gray-600 mb-2">5h · 12 lessons</p>
+                                        <div class="flex items-center text-yellow-500 text-xs">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Related Course Card -->
+                            <div
+                                class="border border-gray-200 rounded-lg p-3 hover:border-[#00855E] transition-colors cursor-pointer">
+                                <div class="flex gap-3">
+                                    <img src="assets/plant_8.jpg" alt="course"
+                                        class="h-16 w-16 object-cover rounded-lg">
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800 text-sm mb-1">Tropical Plants Guide</h4>
+                                        <p class="text-xs text-gray-600 mb-2">6h · 18 lessons</p>
+                                        <div class="flex items-center text-yellow-500 text-xs">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-regular fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- Hamburger Button (Mobile Only) -->
+        <button id="menuBtn"
+            class="fixed bottom-6 right-6 bg-[#00855E] text-white p-4 rounded-full shadow-lg lg:hidden z-50 hover:bg-green-700 transition-colors">
+            <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+    </div>
+
+    <!-- Show Navbar Mobile -->
+    <script src="js/user-navbar.js"></script>
+
+    <!-- Accordion -->
+    <script src="js/accordion.js"></script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</body>
+
+</html>

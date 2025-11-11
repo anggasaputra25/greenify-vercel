@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greenify - Dashboard</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
+    <!-- Font Google Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Style Tailwind -->
+    <link href="./css/output.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-50">
+    <div class="flex">
+        <!-- Navbar -->
+        <nav
+            class="w-full lg:w-1/4 p-10 fixed -left-full lg:static flex flex-col justify-between min-h-screen shadow-md bg-white transition-all duration-300 ease">
+            <div class="flex flex-col gap-5">
+                <div class="flex items-center gap-2">
+                    <img src="assets/favicon.png" alt="logo" class="w-13">
+                    <p class="font-semibold text-2xl text-[#00855E]">Greenify</p>
+                </div>
+                <div class="h-0.5 bg-gray-300"></div>
+                <div class="flex flex-col">
+                    <a href="dashboard.html" class="font-medium py-2.5 text-[#00855E]"><i
+                            class="fa-solid fa-chart-diagram"></i> Overview</a>
+                    <a href="virtual-forest.html"
+                        class="font-medium py-2.5 text-gray-600 transition-all duration-200 hover:pl-2"><i
+                            class="fa-solid fa-leaf"></i> Virtual Forest</a>
+                    <a href="grow-calendar.html"
+                        class="font-medium py-2.5 text-gray-600 transition-all duration-200 hover:pl-2"><i
+                            class="fa-solid fa-calendar-days"></i> Grow Calendar</a>
+                    <a href="green-journey.html"
+                        class="font-medium py-2.5 text-gray-600 transition-all duration-200 hover:pl-2"><i
+                            class="fa-solid fa-camera"></i> Green Journey</a>
+                    <a href="green-courses.html"
+                        class="font-medium py-2.5 text-gray-600 transition-all duration-200 hover:pl-2"><i
+                            class="fa-solid fa-brain"></i> Green Courses</a>
+                    <a href="ai-gardener.html"
+                        class="font-medium py-2.5 text-gray-600 transition-all duration-200 hover:pl-2"><i
+                            class="fa-solid fa-robot"></i> AI Gardener</a>
+                    <a href="profile.html"
+                        class="font-medium py-2.5 text-gray-600 transition-all duration-200 hover:pl-2"><i
+                            class="fa-solid fa-user"></i> Profile</a>
+                </div>
+            </div>
+            <div class="flex flex-col gap-5">
+                <div class="h-0.5 bg-gray-300"></div>
+                <a href="index.html"
+                    class="font-medium text-gray-600 hover:text-red-600 w-fit transition-colors duration-100"><i
+                        class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out</a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="w-full lg:w-3/4 p-10 overflow-y-scroll lg:h-screen">
+            <!-- Header -->
+            <div class="mb-8">
+                <h1 class="text-3xl font-semibold text-gray-800 mb-2">Welcome back, Gardener! 🌱</h1>
+                <p class="text-gray-600">Here's what's happening with your green journey today</p>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <!-- Total Plants -->
+                <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="bg-green-100 p-3 rounded-lg">
+                            <i class="fa-solid fa-seedling text-[#00855E] text-xl"></i>
+                        </div>
+                        <span class="text-green-600 text-sm font-medium">+12%</span>
+                    </div>
+                    <h3 class="text-gray-600 text-sm mb-1">Total Plants</h3>
+                    <p class="text-3xl font-semibold text-gray-800">24</p>
+                </div>
+
+                <!-- Plants Watered Today -->
+                <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="bg-blue-100 p-3 rounded-lg">
+                            <i class="fa-solid fa-droplet text-blue-600 text-xl"></i>
+                        </div>
+                        <span class="text-blue-600 text-sm font-medium">8/12</span>
+                    </div>
+                    <h3 class="text-gray-600 text-sm mb-1">Watered Today</h3>
+                    <p class="text-3xl font-semibold text-gray-800">8</p>
+                </div>
+
+                <!-- Active Courses -->
+                <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="bg-purple-100 p-3 rounded-lg">
+                            <i class="fa-solid fa-book text-purple-600 text-xl"></i>
+                        </div>
+                        <span class="text-purple-600 text-sm font-medium">3 active</span>
+                    </div>
+                    <h3 class="text-gray-600 text-sm mb-1">Green Courses</h3>
+                    <p class="text-3xl font-semibold text-gray-800">5</p>
+                </div>
+
+                <!-- Streak Days -->
+                <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="bg-orange-100 p-3 rounded-lg">
+                            <i class="fa-solid fa-fire text-orange-600 text-xl"></i>
+                        </div>
+                        <span class="text-orange-600 text-sm font-medium">Keep it up!</span>
+                    </div>
+                    <h3 class="text-gray-600 text-sm mb-1">Streak Days</h3>
+                    <p class="text-3xl font-semibold text-gray-800">15</p>
+                </div>
+            </div>
+
+            <!-- Today's Tasks -->
+            <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100 mb-8">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-xl font-semibold text-gray-800">Today's Tasks</h2>
+                    <button class="text-[#00855E] text-sm font-medium hover:underline cursor-pointer">View All</button>
+                </div>
+                <div class="space-y-4">
+                    <!-- Task Item -->
+                    <div class="flex items-start gap-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                        <input type="checkbox" class="mt-1 w-5 h-5 text-[#00855E] rounded focus:ring-[#00855E]">
+                        <div class="flex-1">
+                            <h3 class="font-medium text-gray-800">Water Monstera Deliciosa</h3>
+                            <p class="text-sm text-gray-600 mt-1">Due: Today, 10:00 AM</p>
+                        </div>
+                        <i class="fa-solid fa-droplet text-blue-500"></i>
+                    </div>
+
+                    <!-- Task Item -->
+                    <div class="flex items-start gap-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                        <input type="checkbox" class="mt-1 w-5 h-5 text-[#00855E] rounded focus:ring-[#00855E]">
+                        <div class="flex-1">
+                            <h3 class="font-medium text-gray-800">Fertilize Snake Plant</h3>
+                            <p class="text-sm text-gray-600 mt-1">Due: Today, 2:00 PM</p>
+                        </div>
+                        <i class="fa-solid fa-flask text-green-500"></i>
+                    </div>
+
+                    <!-- Task Item -->
+                    <div class="flex items-start gap-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                        <input type="checkbox" checked class="mt-1 w-5 h-5 text-[#00855E] rounded focus:ring-[#00855E]">
+                        <div class="flex-1">
+                            <h3 class="font-medium text-gray-400 line-through">Check soil moisture</h3>
+                            <p class="text-sm text-gray-500 mt-1">Completed</p>
+                        </div>
+                        <i class="fa-solid fa-check text-green-500"></i>
+                    </div>
+
+                    <!-- Task Item -->
+                    <div class="flex items-start gap-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                        <input type="checkbox" class="mt-1 w-5 h-5 text-[#00855E] rounded focus:ring-[#00855E]">
+                        <div class="flex-1">
+                            <h3 class="font-medium text-gray-800">Prune Peace Lily leaves</h3>
+                            <p class="text-sm text-gray-600 mt-1">Due: Today, 4:00 PM</p>
+                        </div>
+                        <i class="fa-solid fa-scissors text-purple-500"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity & Progress -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Recent Activity -->
+                <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-6">Recent Activity</h2>
+                    <div class="space-y-4">
+                        <!-- Activity Item -->
+                        <div class="flex items-start gap-4">
+                            <div class="bg-green-100 p-2 rounded-full">
+                                <i class="fa-solid fa-seedling text-[#00855E] text-sm"></i>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-gray-800 font-medium">Added new plant</p>
+                                <p class="text-sm text-gray-600">Spider Plant - 2 hours ago</p>
+                            </div>
+                        </div>
+
+                        <!-- Activity Item -->
+                        <div class="flex items-start gap-4">
+                            <div class="bg-blue-100 p-2 rounded-full">
+                                <i class="fa-solid fa-droplet text-blue-600 text-sm"></i>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-gray-800 font-medium">Watered 3 plants</p>
+                                <p class="text-sm text-gray-600">5 hours ago</p>
+                            </div>
+                        </div>
+
+                        <!-- Activity Item -->
+                        <div class="flex items-start gap-4">
+                            <div class="bg-purple-100 p-2 rounded-full">
+                                <i class="fa-solid fa-certificate text-purple-600 text-sm"></i>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-gray-800 font-medium">Completed course</p>
+                                <p class="text-sm text-gray-600">"Indoor Gardening Basics" - Yesterday</p>
+                            </div>
+                        </div>
+
+                        <!-- Activity Item -->
+                        <div class="flex items-start gap-4">
+                            <div class="bg-orange-100 p-2 rounded-full">
+                                <i class="fa-solid fa-camera text-orange-600 text-sm"></i>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-gray-800 font-medium">Uploaded plant photo</p>
+                                <p class="text-sm text-gray-600">2 days ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Progress -->
+                <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-6">Course Progress</h2>
+                    <div class="space-y-5">
+                        <!-- Course Item -->
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <p class="text-gray-800 font-medium">Succulent Care 101</p>
+                                <span class="text-sm text-gray-600">75%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-[#00855E] h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Course Item -->
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <p class="text-gray-800 font-medium">Herb Garden Essentials</p>
+                                <span class="text-sm text-gray-600">45%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-[#00855E] h-2 rounded-full" style="width: 45%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Course Item -->
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <p class="text-gray-800 font-medium">Tropical Plants Guide</p>
+                                <span class="text-sm text-gray-600">20%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-[#00855E] h-2 rounded-full" style="width: 20%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Recommendation -->
+                        <div class="mt-6 p-4 bg-green-50 rounded-lg border border-green-200">
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-lightbulb text-[#00855E] text-xl mt-1"></i>
+                                <div>
+                                    <p class="font-medium text-gray-800 mb-1">Recommended Next</p>
+                                    <p class="text-sm text-gray-600">"Composting at Home" - Perfect for your skill
+                                        level!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- Hamburger Button (Mobile Only) -->
+        <button id="menuBtn"
+            class="fixed bottom-6 right-6 bg-[#00855E] text-white p-4 rounded-full shadow-lg lg:hidden z-50 hover:bg-green-700 transition-colors">
+            <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+    </div>
+
+    <!-- Show Navbar Mobile -->
+    <script src="js/user-navbar.js"></script>
+</body>
+
+</html>

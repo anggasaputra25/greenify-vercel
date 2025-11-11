@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greenify - Virtual Forest</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
+    <!-- Font Google Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Style Tailwind -->
+    <link href="./css/output.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-50">
+    <div class="flex">
+        <!-- Navbar -->
+        <nav
+            class="w-full lg:w-1/4 p-10 fixed -left-full lg:static flex flex-col justify-between min-h-screen shadow-md bg-white transition-all duration-300 ease">
+            <div class="flex flex-col gap-5">
+                <div class="flex items-center gap-2">
+                    <img src="assets/favicon.png" alt="logo" class="w-13">
+                    <p class="font-semibold text-2xl text-[#00855E]">Greenify</p>
+                </div>
+                <div class="h-0.5 bg-gray-300"></div>
+                <div class="flex flex-col">
+                    <a href="dashboard.html"
+                        class="font-medium py-2.5 text-gray-600 transition-all duration-200 hover:pl-2"><i
+                            class="fa-solid fa-chart-diagram"></i> Overview</a>
+                    <a href="virtual-forest.html" class="font-medium py-2.5 text-[#00855E]"><i
+                            class="fa-solid fa-leaf"></i> Virtual Forest</a>
+                    <a href="grow-calendar.html"
+                        class="font-medium py-2.5 text-gray-600 transition-all duration-200 hover:pl-2"><i
+                            class="fa-solid fa-calendar-days"></i> Grow Calendar</a>
+                    <a href="green-journey.html"
+                        class="font-medium py-2.5 text-gray-600 transition-all duration-200 hover:pl-2"><i
+                            class="fa-solid fa-camera"></i> Green Journey</a>
+                    <a href="green-courses.html"
+                        class="font-medium py-2.5 text-gray-600 transition-all duration-200 hover:pl-2"><i
+                            class="fa-solid fa-brain"></i> Green Courses</a>
+                    <a href="ai-gardener.html"
+                        class="font-medium py-2.5 text-gray-600 transition-all duration-200 hover:pl-2"><i
+                            class="fa-solid fa-robot"></i> AI Gardener</a>
+                    <a href="profile.html"
+                        class="font-medium py-2.5 text-gray-600 transition-all duration-200 hover:pl-2"><i
+                            class="fa-solid fa-user"></i> Profile</a>
+                </div>
+            </div>
+            <div class="flex flex-col gap-5">
+                <div class="h-0.5 bg-gray-300"></div>
+                <a href="index.html"
+                    class="font-medium text-gray-600 hover:text-red-600 w-fit transition-colors duration-100"><i
+                        class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out</a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="w-full lg:w-3/4 p-10 overflow-y-scroll lg:h-screen">
+            <!-- Header -->
+            <div class="mb-8">
+                <h1 class="text-3xl font-semibold text-gray-800 mb-2">Virtual Forest</h1>
+                <p class="text-gray-600">Together we're growing a greener world, one plant at a time</p>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <!-- Total Plants by Community -->
+                <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="bg-green-100 p-3 rounded-lg">
+                            <i class="fa-solid fa-seedling text-green-600 text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-gray-600 text-sm mb-1">Community Plants</h3>
+                    <p class="text-4xl font-bold text-gray-800">1,247</p>
+                    <p class="text-gray-500 text-sm mt-2">+89 this week</p>
+                </div>
+
+                <!-- Active Gardeners -->
+                <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="bg-blue-100 p-3 rounded-lg">
+                            <i class="fa-solid fa-users text-blue-600 text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-gray-600 text-sm mb-1">Active Gardeners</h3>
+                    <p class="text-4xl font-bold text-gray-800">356</p>
+                    <p class="text-gray-500 text-sm mt-2">Growing together</p>
+                </div>
+
+                <!-- Your Contribution -->
+                <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="bg-purple-100 p-3 rounded-lg">
+                            <i class="fa-solid fa-hand-holding-heart text-purple-600 text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-gray-600 text-sm mb-1">Your Plants</h3>
+                    <p class="text-4xl font-bold text-gray-800">24</p>
+                    <p class="text-gray-500 text-sm mt-2">Thank you! <i class="fa-solid fa-heart text-[#00855E]"></i>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Add Friend Button in Mobile -->
+            <button onclick="showModal()"
+                class="cursor-pointer bg-[#00855E] text-white py-3 w-full justify-center rounded-lg font-medium hover:bg-[#006B4C] transition-colors flex items-center md:hidden gap-2">
+                <i class="fa-solid fa-plus"></i>
+                Add Friend
+            </button>
+
+            <!-- Modal -->
+            <div id="modal"
+                class="bg-black/50 h-screen fixed top-0 left-0 w-full z-99 hidden justify-center items-center">
+                <div id="modal-form"
+                    class="p-8 bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden max-h-screen overflow-y-auto">
+                    <form class="space-y-6">
+                        <!-- Username -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2" for="username">Username</label>
+                            <div class="flex items-center rounded-lg border border-gray-300">
+                                <p class="px-4 bg-gray-300 h-full py-2.5 rounded-tl-lg rounded-bl-lg">@</p>
+                                <input id="username" type="text" placeholder="Search by username"
+                                    class="w-full ps-3 py-2.5 rounded-tr-lg rounded-br-lg focus:outline-none focus:border-[#00855E] focus:ring-2 focus:ring-[#00855E]/20">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="h-0.5 bg-gray-300 my-5"></div>
+                    <a href="profile.html" class="flex gap-2 items-center p-3 hover:bg-gray-100 rounded-lg">
+                        <img src="assets/angga.jpg" class="h-12 w-12 bg-amber-800 rounded-full object-cover">
+                        <div class="flex flex-col">
+                            <p>anggaaja</p>
+                            <p class="text-sm text-gray-600">Angga Saputra</p>
+                        </div>
+                    </a>
+                    <a href="profile.html" class="flex gap-2 items-center p-3 hover:bg-gray-100 rounded-lg">
+                        <img src="assets/adi.jpg" class="h-12 w-12 bg-amber-800 rounded-full object-cover">
+                        <div class="flex flex-col">
+                            <p>putraadi</p>
+                            <p class="text-sm text-gray-600">Putu Adi</p>
+                        </div>
+                    </a>
+                    <a href="profile.html" class="flex gap-2 items-center p-3 hover:bg-gray-100 rounded-lg">
+                        <img src="assets/widhyatama.jpg" class="h-12 w-12 bg-amber-800 rounded-full object-cover">
+                        <div class="flex flex-col">
+                            <p>widhyatama</p>
+                            <p class="text-sm text-gray-600">Putu Widhyatama</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Virtual Forest Visualization -->
+            <div class="bg-white rounded-xl shadow-sm p-8 border border-gray-100">
+                <div class="flex items-center justify-between mb-6">
+                    <div>
+                        <h2 class="text-2xl font-semibold text-gray-800 mb-1">Our Growing Forest</h2>
+                        <p class="text-gray-600">Watch our community forest flourish</p>
+                    </div>
+                    <button onclick="showModal()"
+                        class="cursor-pointer bg-[#00855E] text-white py-3 px-6 rounded-lg font-medium hover:bg-[#006B4C] transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-plus"></i>
+                        Add Friend
+                    </button>
+                </div>
+
+
+                <!-- Virtual Forest Visualization -->
+                <div class="relative sky-gradient rounded-2xl overflow-x-auto md:overflow-hidden shadow-inner h-[600px]">
+
+                    <!-- Mountains in Background -->
+                    <div class="absolute bottom-32 left-0 right-0 flex justify-around items-end opacity-20">
+                        <div
+                            class="mountain w-0 h-0 border-l-150px border-l-transparent border-r-150px border-r-transparent border-b-200px border-b-gray-600">
+                        </div>
+                        <div
+                            class="mountain w-0 h-0 border-l-120px border-l-transparent border-r-120px border-r-transparent border-b-160px border-b-gray-500">
+                        </div>
+                        <div
+                            class="mountain w-0 h-0 border-l-180px border-l-transparent border-r-180px border-r-transparent border-b-220px border-b-gray-600">
+                        </div>
+                    </div>
+
+                    <!-- Sun with Glow -->
+                    <div class="absolute top-10 right-16">
+                        <div
+                            class="sun w-20 h-20 bg-linear-to-br from-yellow-300 via-yellow-400 to-orange-400 rounded-full">
+                        </div>
+                    </div>
+
+                    <!-- Animated Clouds -->
+                    <div class="cloud-1 absolute top-16 left-24 text-white opacity-70 text-5xl">
+                        <i class="fa-solid fa-cloud drop-shadow-lg"></i>
+                    </div>
+                    <div class="cloud-2 absolute top-24 right-32 text-white opacity-60 text-6xl">
+                        <i class="fa-solid fa-cloud drop-shadow-lg"></i>
+                    </div>
+                    <div class="cloud-3 absolute top-40 left-1/3 text-white opacity-50 text-4xl">
+                        <i class="fa-solid fa-cloud drop-shadow-lg"></i>
+                    </div>
+
+                    <!-- Flying Birds -->
+                    <div class="bird absolute top-32 left-0 text-gray-700 text-2xl">
+                        <i class="fa-solid fa-dove"></i>
+                    </div>
+                    <div class="bird-2 absolute top-28 left-0 text-gray-600 text-xl">
+                        <i class="fa-solid fa-dove"></i>
+                    </div>
+
+                    <!-- Butterflies -->
+                    <div class="butterfly absolute top-60 left-32 text-pink-400 text-3xl">
+                        <i class="fa-solid fa-cannabis"></i>
+                    </div>
+                    <div class="butterfly-2 absolute top-72 right-40 text-purple-400 text-2xl">
+                        <i class="fa-solid fa-cannabis"></i>
+                    </div>
+
+                    <!-- Sparkles -->
+                    <div class="sparkle absolute top-52 left-48 text-yellow-300 text-xl" style="animation-delay: 0.5s;">
+                        <i class="fa-solid fa-sparkles"></i>
+                    </div>
+                    <div class="sparkle absolute top-64 right-56 text-yellow-300 text-lg"
+                        style="animation-delay: 1.5s;">
+                        <i class="fa-solid fa-sparkles"></i>
+                    </div>
+                    <div class="sparkle absolute top-80 left-64 text-yellow-300 text-base"
+                        style="animation-delay: 2.5s;">
+                        <i class="fa-solid fa-sparkles"></i>
+                    </div>
+
+                    <!-- Ground/Soil -->
+                    <div class="absolute bottom-0 left-0 right-0 ground-gradient rounded-b-2xl w-max md:w-full h-[200px]">
+
+                        <!-- Multi-layered Grass -->
+                        <div class="absolute top-0 left-0 right-0">
+                            <div class="absolute top-0 left-0 right-0 h-4 bg-linear-to-b from-green-700 to-green-600">
+                            </div>
+                            <div class="absolute top-2 left-0 right-0 h-3 bg-linear-to-b from-green-600 to-green-500">
+                            </div>
+
+                            <!-- Individual Grass Blades -->
+                            <div class="absolute top-0 left-0 right-0 flex justify-around">
+                                <div class="grass-blade w-1 h-6 bg-green-600 rounded-t-full"
+                                    style="animation-delay: 0s;">
+                                </div>
+                                <div class="grass-blade w-1 h-8 bg-green-700 rounded-t-full"
+                                    style="animation-delay: 0.2s;">
+                                </div>
+                                <div class="grass-blade w-1 h-5 bg-green-600 rounded-t-full"
+                                    style="animation-delay: 0.4s;">
+                                </div>
+                                <div class="grass-blade w-1 h-7 bg-green-500 rounded-t-full"
+                                    style="animation-delay: 0.6s;">
+                                </div>
+                                <div class="grass-blade w-1 h-6 bg-green-700 rounded-t-full"
+                                    style="animation-delay: 0.8s;">
+                                </div>
+                                <div class="grass-blade w-1 h-9 bg-green-600 rounded-t-full"
+                                    style="animation-delay: 1s;">
+                                </div>
+                                <div class="grass-blade w-1 h-5 bg-green-500 rounded-t-full"
+                                    style="animation-delay: 1.2s;">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Enhanced Plants Container -->
+                        <div class="relative h-full flex items-end justify-around px-12 pb-10 -top-[75%]"
+                            id="plantsContainer">
+                            <!-- Plants will be dynamically generated here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info Text -->
+                <div class="mt-6 p-4 bg-green-50 rounded-lg border border-green-200">
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-info-circle text-[#00855E] text-xl mt-0.5"></i>
+                        <div>
+                            <p class="font-medium text-gray-800 mb-1">About Virtual Forest</p>
+                            <p class="text-sm text-gray-600">Every plant you add contributes to our community forest.
+                                This visualization represents the collective effort of all Greenify users working
+                                together to create a greener world. Keep planting and watch our forest grow! 🌱</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Contributors -->
+            <div class="mt-8 bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">Recent Contributors</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <!-- Contributor Card -->
+                    <div class="flex items-center gap-3 p-4 bg-gray-50 rounded-lg">
+                        <div class="w-12 h-12 bg-green-200 rounded-full flex items-center justify-center">
+                            <i class="fa-solid fa-user text-green-700"></i>
+                        </div>
+                        <div>
+                            <p class="font-medium text-gray-800">Sarah Johnson</p>
+                            <p class="text-sm text-gray-600">Added 3 plants today</p>
+                        </div>
+                    </div>
+
+                    <!-- Contributor Card -->
+                    <div class="flex items-center gap-3 p-4 bg-gray-50 rounded-lg">
+                        <div class="w-12 h-12 bg-blue-200 rounded-full flex items-center justify-center">
+                            <i class="fa-solid fa-user text-blue-700"></i>
+                        </div>
+                        <div>
+                            <p class="font-medium text-gray-800">Michael Chen</p>
+                            <p class="text-sm text-gray-600">Added 5 plants today</p>
+                        </div>
+                    </div>
+
+                    <!-- Contributor Card -->
+                    <div class="flex items-center gap-3 p-4 bg-gray-50 rounded-lg">
+                        <div class="w-12 h-12 bg-purple-200 rounded-full flex items-center justify-center">
+                            <i class="fa-solid fa-user text-purple-700"></i>
+                        </div>
+                        <div>
+                            <p class="font-medium text-gray-800">Emma Davis</p>
+                            <p class="text-sm text-gray-600">Added 2 plants today</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- Hamburger Button (Mobile Only) -->
+        <button id="menuBtn"
+            class="fixed bottom-6 right-6 bg-[#00855E] text-white p-4 rounded-full shadow-lg lg:hidden z-50 hover:bg-green-700 transition-colors">
+            <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+    </div>
+
+    <!-- Show Navbar Mobile -->
+    <script src="js/user-navbar.js"></script>
+
+    <!-- Modal -->
+    <script src="js/function-modal.js"></script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <!-- Virtual Forest (Plant & Hover Profile) -->
+    <script src="js/virtual-forest.js"></script>
+</body>
+
+</html>
